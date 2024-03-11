@@ -1,4 +1,4 @@
-\documentclass[11pt]{memoir}
+\documentclass[12pt]{memoir}
 \usepackage{amsmath}
 \usepackage{authblk}
 \usepackage{xcolor}
@@ -8,18 +8,22 @@
 \usepackage{calc}
 \usepackage{marginnote}
 \usepackage{graphicx}
-
+\usepackage{hyperref}
 
 % Set the left and right margin for the header
-\setlength{\headwidth}{\oddsidemargin+\evensidemargin}
-\setlength{\fancyheadoffset}{1cm} % Adjust as needed
+\setlength{\headwidth}{2cm+\evensidemargin}
 \pagestyle{fancy}
 \fancyhf{} % Empty Headers
 \fancyhead[LE]{\thepage} % Page number on left for even pages
 \fancyhead[RO]{\thepage} % Page number on right for odd pages
-\fancyhead[RE]{\leftmark} % Chapter name on right for even pages
-\fancyhead[LO]{\rightmark} % Chapter name on left for odd pages
+\fancyhead[RE]{Communicating without errors} % Header on even pages
+\fancyhead[LO]{Communicating without errors} % Header on odd pages
+
 \renewcommand{\headrulewidth}{0.4pt} % Thickness of the header rule
+
+
+% Redefine \theequation to exclude chapter number
+\renewcommand{\theequation}{\arabic{equation}}
 
 
 % Define a new environment for quotes
@@ -36,8 +40,8 @@
   frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,fill=gray!60,inner sep=4pt] at (frame.north east) {};}
 ]{quotebox}
 
-\setlrmarginsandblock{2cm}{7.5cm}{*}
-\setulmarginsandblock{0}{0.5cm}{*}
+\setlrmarginsandblock{0.5cm}{8cm}{*}
+\setulmarginsandblock{0}{0cm}{*}
 \checkandfixthelayout
 
 % Define margins for the second page onward
@@ -61,14 +65,11 @@
 
 \chapter{Communicating without errors}
 
-
-
 % Add an image in the right margin
 \marginnote{\hspace*{10pt}\includegraphics[width=\marginparwidth-30pt]{images/shannon.jpg}\\\hspace*{10pt}Claude Shannon}[0pt]
-\marginnote{\hspace*{0pt}\includegraphics[width=115pt]{images/C5.png}}[240pt]
+\marginnote{\hspace*{0pt}\includegraphics[width=125pt]{images/C5.png}}[267pt]
 
 In 1956 Claude Shannon, the founder of information theory, posed the following very interesting question:
-\\
 
 \begin{myquote}
 \textit{Suppose we want to transmit messages across a channel (where 
@@ -84,7 +85,7 @@ of symbols, and $E$ the set of edges between unreliable pairs of symbols,
 that is, symbols which may be confused during transmission. For example, 
 communicating over a phone in everyday language, we connnect the symbols
 $B$ and $P$ by an edge since the receiver may not be able to distinguish 
-them. Let us call $G$ the \textit{confusion graph}.\\
+them. Let us call $G$ the \textit{confusion graph}.
 The 5-cycle $C_5$ will play a prominent role in our discussion. In this example,
 $1$ and $2$ may be confused, but not $1$ and $3$, etc. Ideally we would like 
 to use all $5$ symbols for transmission, but since we want to communicate error-free we can 
@@ -95,19 +96,21 @@ this means that for the 5-cycle we achieve an information rate of
 $\log_2 2 = 1$ (instead of the maximal $\log_2 5 \approx 2.32$). It is clear that in this model,
 for an arbitrary graph $G = (V, E)$, the best we can do is to transmit symbols from
 a largest independent set. Thus the information rate, when sending single symbols,
-is $log_2 \alpha(G)$, where $\alpha(G)$ is the \textit{independence number} of $G$.\\
+is $log_2 \alpha(G)$, where $\alpha(G)$ is the \textit{independence number} of $G$.
 
 \noindent Let us see whether we can increase the information rate by using larger 
 strings in place of single symbols. Suppose we want to transmit strings of 
 length 2. The strings ulu2 and vlv, can only be confused if one of the 
 following three cases holds: 
+
 \begin{itemize}
   \item $u_1 = v_1$ and $u_2$ can be confused with $v_2$,
   \item $u_2 = v_2$ and $u_1$ can be confused with $v_1$, or
   \item $u_1 \neq v_1$ can be confused and $u_2 \neq v_2$ can be confused. 
 \end{itemize}
-In graph-theoretic terms this amounts to considering the product $G_1 \times G_2$ 
-of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 x G_2$ has the vertex\\
+
+\noindent In graph-theoretic terms this amounts to considering the product $G_1 \times G_2$ 
+of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 x G_2$ has the vertex
 
 \setsecondpagemargins
 
@@ -133,7 +136,7 @@ strings of length $n$ is
 
 \noindent What can we say about $\alpha(G^n)$? Here is a first observation. Let $U \subseteq V$ 
 be a largest independent set in $G$, $|U| = \alpha$. The an vertices in $G^n$ of the 
-form $(u_1, \dotsb , u_n)$, $u_i \in U$ for all $i$, clearly form an independent set in $G^n$.\\
+form $(u_1, \dotsb , u_n)$, $u_i \in U$ for all $i$, clearly form an independent set in $G^n$.
 Hence 
 
 \begin{equation*}
@@ -149,7 +152,7 @@ Hence
 \noindent meaning that we never decrease the information rate by using longer strings 
 instead of single symbols. This, by the way, is a basic idea of coding theory: 
 By encoding symbols into longer strings we can make error-free communi- 
-cation more efficient.\\
+cation more efficient.
 Disregarding the logarithm we thus arrive at Shannon's fundamental 
 definition: The \textit{zero-error capacity} of a graph $G$ is given by 
 
@@ -158,16 +161,17 @@ definition: The \textit{zero-error capacity} of a graph $G$ is given by
   \Theta(G) := \sup_{n\geq1}\sqrt[n]{\alpha(G^n)},
 \end{equation*}
 
-\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\left\ \ \ \\\center The graph $C_5 \times C_6$.}
+\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\left\ \ \ \center The graph $C_5 \times C_6$.}
 
-\noindent and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.\\
-\\
+\noindent and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
+
+
 Let us look at $C_5$. So far we know $\alpha(C_5) = 2 \leq \Theta(C_5)$. Looking at 
 the $5$-cycle as depicted earlier, or at the product $C_5 x C_5$ as drawn on the 
 left, we see that the set $\{(1, 1), (2,3), (3,5), (4,2), (5,4)\}$ is independent 
 in $C_5^2$. Thus we have $\alpha(C_5^2) \geq 5$. Since an independent set can contain 
-only two vertices from any two consecutive rows we see that $\alpha(C_5^2) = 5$.\\
-Hence, by using strings of length $2$ we have increased the lower bound for the capacity to $\Theta(C_5) \geq \sqrt{5}$.\\
+only two vertices from any two consecutive rows we see that $\alpha(C_5^2) = 5$.
+Hence, by using strings of length $2$ we have increased the lower bound for the capacity to $\Theta(C_5) \geq \sqrt{5}$.
 
 
 \noindent So far we have no upper bounds for the capacity. To obtain such bounds 
@@ -175,5 +179,77 @@ we again follow Shannon's original ideas. First we need the dual definition
 of an independent set. We recall that a subset $C \subseteq V$ is a \textit{clique} if any
 two vertices of $C$ are joined by an edge. Thus the vertices form trivial
 
+\setsecondpagemargins
+
+\noindent cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
+of size $3$, and so on. Let $C$ be the set of cliques in $G$. Consider an arbitrary 
+probability distribution $x = (x, : v \in V)$ on the set of vertices, that 
+is, $x_v \geq 0$ and $\sum_{v \in V} x_v = 1$. To every distribution $x$ we associate 
+the ``maximal value of a clique"
+
+\begin{equation*}
+\lambda(x) = \max_{C \in \mathcal{C}} \sum_{v\in C} x_v}.
+\end{equation*}
+
+\noindent and finally we set
+
+\begin{equation*}
+\lambda(G) = \min_x\lambda(x) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v}.
+\end{equation*}
+
+\noindent To be precise we should use inf instead of min, but the minimum exists
+because $\lambda(x)$ is continuous on the compact set of all distributions.
+Consider now an independent set $U \subseteq V$ of maximal size $\alpha(G) = \alpha $.
+Associated to $U$ we define the distribution $x_U  = (x_v : v \in V)$ by setting 
+$x_v = \frac{1}{\alpha}$ if $v \in U$ and $x_v = 0$ otherwise. Since any clique contains at most 
+one vertex from $U$,  we infer $\lambda(x_U) = \frac{1}{\alpha} $, 
+and thus by the definition of $\lambda(G)$
+
+\begin{equation*}
+\lambda(G) \leq \frac{1}{\alpha(G)}} \quad \text{or} \quad \alpha(G) \leq \lambda(G)^{-1}.
+\end{equation*}
+
+What Shannon observed is that $\lamda(G)^{-1}$ is, in fact, an upper bound for all 
+$\sqrt[n]{\alpha(G^n)}$, and hence also for $\Theta(G)$. In order to prove this it suffices to 
+show that for graphs $G$, $H$
+
+\begin{equation}
+\lambda(G \times H) = \lambda(G)\lambda(H) \label{one}
+\end{equation}
+
+holds, since this will imply $\lambda(G^n) = \lambda(G)^n$ and hence
+
+\begin{equation*}
+  \begin{align}
+  \alpha(G^n) \leq \lambda(G^n)^{-1} = \lambda(G)^{-n} \\
+  \sqrt[n]{\alpha(G^n)} \leq \lambda(G)^{-1}.
+  \end{align}
+\end{equation*}
+
+% FIX BIBLIOGRAPHY
+To prove (\ref{one}) we make use of the duality theorem of linear programming 
+(see [I]) and get
+
+\begin{equation}
+  \lambda(G) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v = \max_y\min_{v \in V}\sum_{C \ni v}y_C, \label{two}
+\end{equation}
+
+\noindent where the right-hand side runs through all probability distributions $y = (y_C : C \in \mathcal{C})$
+on $\mathcal{C}$.\\
+Consider $G \times H$, and let $x$ and $x'$ be distributions which achieve the 
+minima, $\lambda(x) = \(G)$, $\lambda(x') = \lambda(H)$. In the vertex set of $G \times H$ we 
+assign the value $z_{(u,v)} = x_ux'_v$ to the vertex $(u, v)$. Since $\sum_{(u,v)}z_{(u,v)} = \sum_u x_u \sum_v x'_v, = 1$, 
+we obtain a distribution. Next we observe that the maximal cliques in 
+$G \times H$ are of the form $C \times D = \{(u, v) : u \in C, v \in D \} $
+where $C$ and $D$ are cliques in $G$ and $H$, respectively. Hence we obtain 
+
+
+\begin{equation*}
+  \begin{align}
+  \lambda(G \times H) \leq \lambda(z) = \max_{C \times D} \sum_{(u,v) \in C \times D} z_(u,v)\\
+  - \max_{C \times D} \sum_{u\in C} x_u \sum_{v \in D} x'_v = \lambda(G)\lambda(H)
+  \end{align}
+\end{equation*}
 
 \end{document}
+
