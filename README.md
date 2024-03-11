@@ -6,3 +6,10 @@ This project contains two parts, the file "firstpart.tex" contains the first fiv
 
 # Compiling
 Just use your standard LaTeX compiler to compile book into pdf. ( preferably texlive )
+
+# TODO
+
+[ ] Add bibliography file and citations.
+[ ] Check if correctly retyped.
+[ ] Create secondpart.tex template.
+[ ] fix page numbering.
