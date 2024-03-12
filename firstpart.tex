@@ -17,8 +17,8 @@
 \fancyhf{} % Empty Headers
 \fancyhead[LE]{\thepage} % Page number on left for even pages
 \fancyhead[RO]{\thepage} % Page number on right for odd pages
-\fancyhead[RE]{Communicating without errors} % Header on even pages
-\fancyhead[LO]{Communicating without errors} % Header on odd pages
+\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages
+\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages
 
 \renewcommand{\headrulewidth}{0.4pt} % Thickness of the header rule
 
@@ -61,17 +61,20 @@
 {\end{quote}\end{quotebox}}
 
 \mdfsetup{linewidth=1pt}
-\begin{document}
+
+%% SET CORRECT CHAPTER AND PAGE NUMBERS %%
 \setcounter{chapter}{32}
-\setcounter{page}{213} % FIX PAGE NUMBERING
+\setcounter{page}{213} % FIX PAGE NUMBERING %
+
+\begin{document}
 
 % Adjust space before and after chapter title
-\setlength{\beforechapskip}{5pt} % Adjust as needed
-\setlength{\afterchapskip}{55pt} % Adjust as needed
+\setlength{\beforechapskip}{5pt}
+\setlength{\afterchapskip}{55pt}
 
 \chapter{Communicating without errors}
 
-% Add an image in the right margin
+% Add images in the right margin
 \marginnote{\hspace*{10pt}\includegraphics[width=\marginparwidth-30pt]{images/shannon.jpg}\\\hspace*{10pt}Claude Shannon}[0pt]
 \marginnote{\hspace*{0pt}\includegraphics[width=125pt]{images/C5.png}}[267pt]
 
@@ -277,7 +280,7 @@ Let us apply our findings to the $5$-cycle and, more generally, to the $m$-cycle
 By using the uniform distribution $(\frac{1}{m},\dotsb,\frac{1}{m})$ on the 
 vertices, we obtain $\lambda(C_m) \leq \frac{2}{m} $, since any clique contains at most two 
 vertices. Similarly, choosing $\frac{1}{m}$ for the edges and $0$ for the vertices, we have 
-$\lambda(C_m) \geq \frac{2}{m}$ by the dual expression in (\refer{two}). We conclude that $\lambda(C_m) = \frac{2}{m}$ 
+$\lambda(C_m) \geq \frac{2}{m}$ by the dual expression in (\ref{two}). We conclude that $\lambda(C_m) = \frac{2}{m}$ 
 and therefore 
 
 \begin{equation*}
@@ -296,7 +299,7 @@ So, the first interesting case is the 5-cycle, where we know up to now
 Using his linear programming approach (and some other ideas) Shannon 
 was able to compute the capacity of many graphs and, in particular, of all 
 graphs with five or fewer vertices --- with the single exception of $C_5$, where 
-he could not go beyond the bounds in (\refer{three}). This is where things stood for 
+he could not go beyond the bounds in (\ref{three}). This is where things stood for 
 more than $20$ years until L\'aszl\'o Lov\'asz showed by an astonishingly simple argument
 that indeed $\Theta(C_5) = \sqrt{5}$. A seemingly very difficult combinatorial 
 problem was provided with an unexpected and elegant solution.\\
@@ -330,7 +333,7 @@ this $\Theta(C_5) \leq \sqrt{5}$ follows, and therefore $\Theta(C_5) = \sqrt{5}$
 
 \setsecondpagemargins
 
-Let us see how Lov\'asz proceeded to prove the inequality (\refer{four}). (His results 
+Let us see how Lov\'asz proceeded to prove the inequality (\ref{four}). (His results 
 were, in fact, much more general.) Consider the usual inner product 
 
 \begin{equation*}
@@ -369,7 +372,7 @@ the diagonals in the golden section.\\
 Here is Euclid's Book Proof. Since the total angle sum of the pentagon 
 is $3\pi$, the angle at any vertex equals $\frac{3\pi}{5}$. It follows that 
 $\sphericalangle ABE = \frac{\pi}{5}$, since $ABE$ is an isosceles triangle. This, in turn, 
-implies $\sphericalangle AME = \frac{\pi}{5}$, and we conclude that the triangles $ABC$ and 
+implies $\sphericalangle AMB = \frac{3\pi}{5}$, and we conclude that the triangles $ABC$ and 
 $AMB$ are similar. The quadrilateral $CMED$  is a rhombus since opposing sides are
 parallel (look at the angles), and so $|MC| = a$ and thus $|AM| = d - a$. By the similarity of 
 $ABC$ and $AMB$ we conclude
@@ -380,7 +383,7 @@ $ABC$ and $AMB$ we conclude
 
 There is more to come. For the distance $s$ of a vertex to the center of 
 the pentagon $S$,  the reader is invited to prove the relation $s^2 = \frac{d^2}{\tau + 2}$ 
-(note that $|BS|$ cuts the diagonal $AC$ at a right angle and halves it). 
+(note that $BS$ cuts the diagonal $AC$ at a right angle and halves it). 
 To finish our excursion into geometry, consider now the umbrella 
 with the regular pentagon on top. Since alternate ribs (of length $1$) 
 form a right angle, the theorem of Pythagoras gives us $d = sqrt{2}$, and 
@@ -390,6 +393,8 @@ we find for the height $h = |OS|$ our promised result
 \begin{equation*}
   h^2 = 1 - s^2 = \frac{1+\sqrt{5}}{\sqrt{5}+5} = \frac{1}{\sqrt{5}}.
 \end{equation*}
+
+\vspace{5pt}
 
 \end{mdframed}
 
