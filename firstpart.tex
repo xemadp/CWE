@@ -1,5 +1,6 @@
 \documentclass[12pt]{memoir}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{authblk}
 \usepackage{xcolor}
 \usepackage{mdframed}
@@ -21,6 +22,9 @@
 
 \renewcommand{\headrulewidth}{0.4pt} % Thickness of the header rule
 
+
+% REMOVE ALL INDENTATION ON PARAGRAPHS
+\setlength{\parindent}{0pt}
 
 % Redefine \theequation to exclude chapter number
 \renewcommand{\theequation}{\arabic{equation}}
@@ -56,8 +60,10 @@
 {\begin{quotebox}\begin{quote}}
 {\end{quote}\end{quotebox}}
 
+\mdfsetup{linewidth=1pt}
 \begin{document}
 \setcounter{chapter}{32}
+\setcounter{page}{213} % FIX PAGE NUMBERING
 
 % Adjust space before and after chapter title
 \setlength{\beforechapskip}{5pt} % Adjust as needed
@@ -78,7 +84,7 @@ rate of transmission such that the receiver may recover the original
 message without errors?}
 \end{myquote}
 
-\noindent Let us see what Shannon meant by ``channel" and ``rate of transmission." 
+Let us see what Shannon meant by ``channel" and ``rate of transmission." 
 We are given a set V of symbols, and a message is just a string of symbols 
 from V. We model the channel as a graph $G = (V,E)$  where $V$ is the set 
 of symbols, and $E$ the set of edges between unreliable pairs of symbols, 
@@ -98,7 +104,7 @@ for an arbitrary graph $G = (V, E)$, the best we can do is to transmit symbols f
 a largest independent set. Thus the information rate, when sending single symbols,
 is $log_2 \alpha(G)$, where $\alpha(G)$ is the \textit{independence number} of $G$.
 
-\noindent Let us see whether we can increase the information rate by using larger 
+Let us see whether we can increase the information rate by using larger 
 strings in place of single symbols. Suppose we want to transmit strings of 
 length 2. The strings ulu2 and vlv, can only be confused if one of the 
 following three cases holds: 
@@ -109,12 +115,14 @@ following three cases holds:
   \item $u_1 \neq v_1$ can be confused and $u_2 \neq v_2$ can be confused. 
 \end{itemize}
 
-\noindent In graph-theoretic terms this amounts to considering the product $G_1 \times G_2$ 
+In graph-theoretic terms this amounts to considering the product $G_1 \times G_2$ 
 of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 x G_2$ has the vertex
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECOND PAGE
 \setsecondpagemargins
 
-\noindent set $V_1 \times V_2 = \{(u_1,u_2) :\ u_1 \in V_1,u_2 \in V_2\}$, with $(u_1,u_2) \neq (v_1,v_2)$ 
+set $V_1 \times V_2 = \{(u_1,u_2) :\ u_1 \in V_1,u_2 \in V_2\}$, with $(u_1,u_2) \neq (v_1,v_2)$ 
 connected by an edge if and only if $u_i = v_i$ or $u_iv_i \in E$ for $i = 1,2$. The 
 confusion graph for strings of length $2$ is thus $G^2 - G \times G$, the product of 
 the confusion graph $G$ for single symbols with itself. The information rate 
@@ -124,7 +132,7 @@ of strings of length $2$ \textit{per symbol} is then given by
   \frac{\log_2 \alpha(G^2)}{2} = \log_2\sqrt{\alpha(G^2)}.
 \end{equation*}
 
-\noindent Now, of course, we may use strings of any length $n$. The $n$-th confusion 
+Now, of course, we may use strings of any length $n$. The $n$-th confusion 
 graph $G^n = G \times G \times\dotsb\times G$ has vertex set $V^n = \{(u_1,\dotsb,u_n) : u_i \in V\}$ 
 with $(u_1,\dotsb,u_n) \neq (v_1,\dotsb,v_n)$ being connected by an edge if $u_i = v_i$ or 
 $u_iv_i\ \in\ E$ for all $i$. The rate of information per symbol determined by 
@@ -134,7 +142,7 @@ strings of length $n$ is
   \frac{\log_2 \alpha(G^n)}{n} = \log_2\sqrt[n]{\alpha(G^n)}.
 \end{equation*}
 
-\noindent What can we say about $\alpha(G^n)$? Here is a first observation. Let $U \subseteq V$ 
+What can we say about $\alpha(G^n)$? Here is a first observation. Let $U \subseteq V$ 
 be a largest independent set in $G$, $|U| = \alpha$. The an vertices in $G^n$ of the 
 form $(u_1, \dotsb , u_n)$, $u_i \in U$ for all $i$, clearly form an independent set in $G^n$.
 Hence 
@@ -143,13 +151,13 @@ Hence
   \alpha(G^n) \geq \alpha(G)^n
 \end{equation*}
 
-\noindent and therefore
+and therefore
 
 \begin{equation*}
   \sqrt[n]{\alpha(G^n)} \geq \alpha(G),
 \end{equation*}
 
-\noindent meaning that we never decrease the information rate by using longer strings 
+meaning that we never decrease the information rate by using longer strings 
 instead of single symbols. This, by the way, is a basic idea of coding theory: 
 By encoding symbols into longer strings we can make error-free communi- 
 cation more efficient.
@@ -163,7 +171,7 @@ definition: The \textit{zero-error capacity} of a graph $G$ is given by
 
 \marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\ \ \ \center The graph $C_5 \times C_6$.}
 
-\noindent and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
+and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
 
 
 Let us look at $C_5$. So far we know $\alpha(C_5) = 2 \leq \Theta(C_5)$. Looking at 
@@ -174,14 +182,16 @@ only two vertices from any two consecutive rows we see that $\alpha(C_5^2) = 5$.
 Hence, by using strings of length $2$ we have increased the lower bound for the capacity to $\Theta(C_5) \geq \sqrt{5}$.
 
 
-\noindent So far we have no upper bounds for the capacity. To obtain such bounds 
+So far we have no upper bounds for the capacity. To obtain such bounds 
 we again follow Shannon's original ideas. First we need the dual definition 
 of an independent set. We recall that a subset $C \subseteq V$ is a \textit{clique} if any
 two vertices of $C$ are joined by an edge. Thus the vertices form trivial
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THIRD PAGE
 \setsecondpagemargins
 
-\noindent cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
+cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
 of size $3$, and so on. Let $C$ be the set of cliques in $G$. Consider an arbitrary 
 probability distribution $x = (x, : v \in V)$ on the set of vertices, that 
 is, $x_v \geq 0$ and $\sum_{v \in V} x_v = 1$. To every distribution $x$ we associate 
@@ -191,13 +201,13 @@ the ``maximal value of a clique"
 \lambda(x) = \max_{C \in \mathcal{C}} \sum_{v\in C} x_v.
 \end{equation*}
 
-\noindent and finally we set
+and finally we set
 
 \begin{equation*}
 \lambda(G) = \min_x\lambda(x) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v.
 \end{equation*}
 
-\noindent To be precise we should use inf instead of min, but the minimum exists
+To be precise we should use inf instead of min, but the minimum exists
 because $\lambda(x)$ is continuous on the compact set of all distributions.
 Consider now an independent set $U \subseteq V$ of maximal size $\alpha(G) = \alpha $.
 Associated to $U$ we define the distribution $x_U  = (x_v : v \in V)$ by setting 
@@ -234,7 +244,7 @@ To prove (\ref{one}) we make use of the duality theorem of linear programming
   \lambda(G) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v = \max_y\min_{v \in V}\sum_{C \ni v}y_C, \label{two}
 \end{equation}
 
-\noindent where the right-hand side runs through all probability distributions $y = (y_C : C \in \mathcal{C})$
+where the right-hand side runs through all probability distributions $y = (y_C : C \in \mathcal{C})$
 on $\mathcal{C}$.\\
 Consider $G \times H$, and let $x$ and $x'$ be distributions which achieve the 
 minima, $\lambda(x) = \lambda(G)$, $\lambda(x') = \lambda(H)$. In the vertex set of $G \times H$ we 
@@ -249,6 +259,139 @@ where $C$ and $D$ are cliques in $G$ and $H$, respectively. Hence we obtain
   - \max_{C \times D} \sum_{u\in C} x_u \sum_{v \in D} x'_v = \lambda(G)\lambda(H)
   \end{align}
 \end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FOURTH PAGE
+\setsecondpagemargins
+
+by the definition of $\lambda(G \times H)$. In the same way the converse inequality 
+$\lambda(G \times H) \geq \lambda(G)\lambda(H)$ is shown by using the dual expression for $\lambda(G)$ 
+in (\ref{two}). In summary we can state: 
+
+\begin{equation*}
+  \Theta(G) \leq \lambda(G)^{-1},
+\end{equation*}
+
+for any graph G.
+Let us apply our findings to the $5$-cycle and, more generally, to the $m$-cycle $C_m$.
+By using the uniform distribution $(\frac{1}{m},\dotsb,\frac{1}{m})$ on the 
+vertices, we obtain $\lambda(C_m) \leq \frac{2}{m} $, since any clique contains at most two 
+vertices. Similarly, choosing $\frac{1}{m}$ for the edges and $0$ for the vertices, we have 
+$\lambda(C_m) \geq \frac{2}{m}$ by the dual expression in (\refer{two}). We conclude that $\lambda(C_m) = \frac{2}{m}$ 
+and therefore 
+
+\begin{equation*}
+  \Theta(C_m) \leq \frac{m}{2}
+\end{equation*}
+
+for all $m$. Now, if $m$ is even, then clearly $\alpha(C_m) = \frac{m}{2}$
+and thus also $\Theta(C_m) = \frac{m}{2}$. For odd $m$, however, we have $\alpha(C_m) = \frac{m-1}{2}$. 
+For $m = 3$, $C_3$ is a clique, and so is every product $C_3^n$, implying $a(C_3) = \Theta(C_3) = 1$. 
+So, the first interesting case is the 5-cycle, where we know up to now 
+
+\begin{equation}
+  \sqrt{5} \leq \Theta(C_m) \leq \frac{5}{2} \label{three}
+\end{equation}
+
+Using his linear programming approach (and some other ideas) Shannon 
+was able to compute the capacity of many graphs and, in particular, of all 
+graphs with five or fewer vertices --- with the single exception of $C_5$, where 
+he could not go beyond the bounds in (\refer{three}). This is where things stood for 
+more than $20$ years until L\'aszl\'o Lov\'asz showed by an astonishingly simple argument
+that indeed $\Theta(C_5) = \sqrt{5}$. A seemingly very difficult combinatorial 
+problem was provided with an unexpected and elegant solution.\\
+
+Lov\'asz' main new idea was to represent the vertices $v$ of the graph by 
+real vectors of length $1$ such that any two vectors which belong to nonadjacent 
+vertices in $G$ are orthogonal. Let us call such a set of vectors 
+an orthonormal representation of $G$. Clearly, such a representation always 
+exists: just take the unit vectors $(1,0,0,\dotsb,0)^T$, $(0,1,0,\dotsb,0)^T$, \dotsb,
+$(0,0,0,\dotsb,1)^T$ of dimension $m=|V|$.\\
+
+
+For the graph $C_5$ we may obtain an orthonormal representation in $\mathbb{R}^3$ by 
+considering an ``umbrella" with five ribs $v_1, \dotsb , v_5$ of unit length. Now 
+open the umbrella (with tip at the origin) to the point where the angles 
+between alternate ribs are $90^\circ$. \\
+Lov\'asz then went on to show that the height $h$ of the umbrella, that is, the 
+distance between $0$ and $S$, provides the bound
+
+\marginnote{\hspace*{-1cm}\includegraphics[width=\marginparwidth-30pt]{images/umbrella.png}\\\center\hspace*{-0.8cm}The Lov\'asz umbrella}[-2cm]
+
+\begin{equation}
+  \Theta(C_5) \leq \frac{1}{h^2}. \label{four}
+\end{equation}
+
+A simple calculation yields $h^2 = \frac{1}{5}$; see the box on the next page. From   
+this $\Theta(C_5) \leq \sqrt{5}$ follows, and therefore $\Theta(C_5) = \sqrt{5}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIFTH PAGE
+
+\setsecondpagemargins
+
+Let us see how Lov\'asz proceeded to prove the inequality (\refer{four}). (His results 
+were, in fact, much more general.) Consider the usual inner product 
+
+\begin{equation*}
+  \langle x,y \rangle = x_1y_1 + \dotsb + x_8y_8
+\end{equation*}
+
+of two vectors $x = (x_1, \dotsb, x_8)$, $y = (y_1, \dotsb, y_8)$ in $\mathbb{R}^8$.
+Then $|x|^2 = \langle x,x \rangle = x_1^2 + \dotsb + x_8^2$ is the square of the length $|x|$
+of $x$, and the angle $\gamma$ between $x$ and $y$ is given by
+
+\begin{equation*}
+  \cos \gamma = \frac{\langle x,y \rangle}{|x||y|}.
+\end{equation*}
+
+Thus $\langle x,y \rangle = 0$ if and only if $x$ and $y$ are orthogonal.\\
+
+\marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-40pt]{images/rectangle.png}\\\vspace*{-5pt}\hspace*{135pt}$b - a$}[28pt]
+\marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-70pt]{images/pentagon.png}\\\center\hspace*{-0.8cm}}[178pt]
+
+\begin{mdframed}[nobreak=true]
+\vspace{8pt}
+{\Large\textbf{Pentagons and the golden section}}\\
+[5pt]
+Tradition has it that a rectangle was considered aesthetically pleasing 
+if, after cutting off a square of length $a$, the remaining rectangle had 
+the same shape as the original one. The side lengths $a$, $b$  of such a
+rectangle must satisfy $\frac{b}{a}= \frac{a}{b-a}$. Setting $\tau := \frac{b}{a}$
+for the ratio, we obtain $\tau = \frac{1}{r-1}$ or $\tau^2 - \tau - 1 = 0$. Solving
+the quatratic equation yields the \textit{golden section} $\tau = \frac{1 + \sqrt{5}}{2}$ \approx 1.6180.\\
+
+Consider now a regular pentagon of side length $a$, and let $d$ be the 
+length of its diagonals. It was already known to Euclid (Book XIII,8) 
+that $\frac{d}{a} = \tau$, and that the intersection point of two diagonals divides 
+the diagonals in the golden section.\\
+
+Here is Euclid's Book Proof. Since the total angle sum of the pentagon 
+is $3\pi$, the angle at any vertex equals $\frac{3\pi}{5}$. It follows that 
+$\sphericalangle ABE = \frac{\pi}{5}$, since $ABE$ is an isosceles triangle. This, in turn, 
+implies $\sphericalangle AME = \frac{\pi}{5}$, and we conclude that the triangles $ABC$ and 
+$AMB$ are similar. The quadrilateral $CMED$  is a rhombus since opposing sides are
+parallel (look at the angles), and so $|MC| = a$ and thus $|AM| = d - a$. By the similarity of 
+$ABC$ and $AMB$ we conclude
+
+\begin{equation*}
+  \frac{d}{a} = \frac{|AC|}{|AB|} = \frac{|AB|}{|AM|} = \frac{a}{b-a} = \frac{|MC|}{|MA|} = \tau.
+\end{equation*}
+
+There is more to come. For the distance $s$ of a vertex to the center of 
+the pentagon $S$,  the reader is invited to prove the relation $s^2 = \frac{d^2}{\tau + 2}$ 
+(note that $|BS|$ cuts the diagonal $AC$ at a right angle and halves it). 
+To finish our excursion into geometry, consider now the umbrella 
+with the regular pentagon on top. Since alternate ribs (of length $1$) 
+form a right angle, the theorem of Pythagoras gives us $d = sqrt{2}$, and 
+hence $s^2 = \frac{2}{\tau + 2} = \frac{4}{sqrt{5} + 5}$. So, with Pythagoras again, 
+we find for the height $h = |OS|$ our promised result
+
+\begin{equation*}
+  h^2 = 1 - s^2 = \frac{1+\sqrt{5}}{\sqrt{5}+5} = \frac{1}{\sqrt{5}}.
+\end{equation*}
+
+\end{mdframed}
 
 \end{document}
 
