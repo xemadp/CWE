@@ -12,4 +12,5 @@ Just use your standard LaTeX compiler to compile book into pdf. ( preferably tex
 - [ ] Add bibliography file and citations.
 - [ ] Check if correctly retyped.
 - [ ] Create secondpart.tex template.
-- [ ] fix page numbering.
+- [x] finish firstpart.
+- [x] fix page numbering.
