@@ -9,8 +9,9 @@ Just use your standard LaTeX compiler to compile book into pdf. ( preferably tex
 
 # TODO
 
-- [ ] Add bibliography file and citations.
-- [ ] Check if correctly retyped.
-- [ ] Create secondpart.tex template.
+- [x] Create secondpart.tex template.
 - [x] finish firstpart.
 - [x] fix page numbering.
+- [ ] finish secondpart.
+- [ ] Add bibliography file and citations.
+- [ ] Check if correctly retyped.
