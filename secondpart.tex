@@ -1,0 +1,56 @@
+\documentclass[12pt]{memoir}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{calc}
+%\usepackage{marginnote}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+% Set the left and right margin for the header
+\setlength{\headwidth}{200pt}
+\pagestyle{fancy}
+\fancyhf{} % Empty Headers
+\fancyhead[LE]{\thepage} % Page number on left for even pages
+\fancyhead[RO]{\thepage} % Page number on right for odd pages
+\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages
+\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages
+
+% REMOVE ALL INDENTATION ON PARAGRAPHS
+\setlength{\parindent}{0pt}
+
+% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER
+\renewcommand{\theequation}{\arabic{equation}}
+
+% DEFINE DOCUMENT MARGINS
+\setulmarginsandblock{2cm}{0.5cm}{*}
+\setlrmarginsandblock{0.5cm}{8cm}{*}
+\checkandfixthelayout
+
+% DEFINE MARGINS FOR THE NEW PAGES
+\newcommand{\setnewpagemargins}{
+    \clearpage
+    \checkandfixthelayout
+}
+
+% SET UP BOX LINE WIDTH
+\mdfsetup{linewidth=1pt}
+
+% FIX PAGE NUMBERING
+\setcounter{page}{218} % FIX PAGE NUMBERING %
+
+
+% BEGINNING DOCUMENT
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SIXTH PAGE
+\setnewpagemargins
+
+\end{document}
