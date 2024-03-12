@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{mdframed}
 \usepackage{tikz}
+\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{calc}
 \usepackage{marginnote}
@@ -12,7 +13,6 @@
 \usepackage{hyperref}
 
 % Set the left and right margin for the header
-\setlength{\headwidth}{2cm+\evensidemargin}
 \pagestyle{fancy}
 \fancyhf{} % Empty Headers
 \fancyhead[LE]{\thepage} % Page number on left for even pages
@@ -20,17 +20,13 @@
 \fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages
 \fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages
 
-\renewcommand{\headrulewidth}{0.4pt} % Thickness of the header rule
-
-
 % REMOVE ALL INDENTATION ON PARAGRAPHS
 \setlength{\parindent}{0pt}
 
-% Redefine \theequation to exclude chapter number
+% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER
 \renewcommand{\theequation}{\arabic{equation}}
 
-
-% Define a new environment for quotes
+% DEFINE ENVIRONMENT FOR QUOTES
 \newmdenv[
   backgroundcolor=white,
   linewidth=0pt,
@@ -44,37 +40,39 @@
   frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,fill=gray!60,inner sep=4pt] at (frame.north east) {};}
 ]{quotebox}
 
+\newenvironment{myquote}
+{\begin{quotebox}\begin{quote}}
+{\end{quote}\end{quotebox}}
+
+% DEFINE DOCUMENT MARGINS
 \setlrmarginsandblock{0.5cm}{8cm}{*}
 \setulmarginsandblock{0}{0cm}{*}
 \checkandfixthelayout
 
-% Define margins for the second page onward
-\newcommand{\setsecondpagemargins}{
+% DEFINE MARGINS FOR NEW PAGES
+\newcommand{\setnewpagemargins}{
     \clearpage
     \setulmarginsandblock{2cm}{0.5cm}{*}
     \checkandfixthelayout
 }
 
-
-\newenvironment{myquote}
-{\begin{quotebox}\begin{quote}}
-{\end{quote}\end{quotebox}}
-
+% SET UP BOX LINE WIDTH
 \mdfsetup{linewidth=1pt}
 
 %% SET CORRECT CHAPTER AND PAGE NUMBERS %%
 \setcounter{chapter}{32}
 \setcounter{page}{213} % FIX PAGE NUMBERING %
 
-\begin{document}
-
-% Adjust space before and after chapter title
+% ADJUST SPACE BEFORE AND AFTER CHAPTER TITLE
 \setlength{\beforechapskip}{5pt}
 \setlength{\afterchapskip}{55pt}
 
+% BEGINNING DOCUMENT
+\begin{document}
+
 \chapter{Communicating without errors}
 
-% Add images in the right margin
+% Add TWO IMAGES IN THE RIGHT MARGIN
 \marginnote{\hspace*{10pt}\includegraphics[width=\marginparwidth-30pt]{images/shannon.jpg}\\\hspace*{10pt}Claude Shannon}[0pt]
 \marginnote{\hspace*{0pt}\includegraphics[width=125pt]{images/C5.png}}[267pt]
 
@@ -112,7 +110,7 @@ strings in place of single symbols. Suppose we want to transmit strings of
 length 2. The strings ulu2 and vlv, can only be confused if one of the 
 following three cases holds: 
 
-\begin{itemize}
+\begin{itemize}[leftmargin=12pt]
   \item $u_1 = v_1$ and $u_2$ can be confused with $v_2$,
   \item $u_2 = v_2$ and $u_1$ can be confused with $v_1$, or
   \item $u_1 \neq v_1$ can be confused and $u_2 \neq v_2$ can be confused. 
@@ -123,7 +121,7 @@ of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 \times G_2$ has t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECOND PAGE
-\setsecondpagemargins
+\setnewpagemargins
 
 set $V_1 \times V_2 = \{(u_1,u_2) :\ u_1 \in V_1,u_2 \in V_2\}$, with $(u_1,u_2) \neq (v_1,v_2)$ 
 connected by an edge if and only if $u_i = v_i$ or $u_iv_i \in E$ for $i = 1,2$. The 
@@ -172,6 +170,7 @@ definition: The \textit{zero-error capacity} of a graph $G$ is given by
   \Theta(G) := \sup_{n\geq1}\sqrt[n]{\alpha(G^n)},
 \end{equation*}
 
+% Add IMAGE IN THE LEFT MARGIN
 \marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\ \ \ \center The graph $C_5 \times C_6$.}
 
 and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
@@ -192,7 +191,7 @@ two vertices of $C$ are joined by an edge. Thus the vertices form trivial
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THIRD PAGE
-\setsecondpagemargins
+\setnewpagemargins
 
 cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
 of size $3$, and so on. Let $C$ be the set of cliques in $G$. Consider an arbitrary 
@@ -265,7 +264,7 @@ where $C$ and $D$ are cliques in $G$ and $H$, respectively. Hence we obtain
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FOURTH PAGE
-\setsecondpagemargins
+\setnewpagemargins
 
 by the definition of $\lambda(G \times H)$. In the same way the converse inequality 
 $\lambda(G \times H) \geq \lambda(G)\lambda(H)$ is shown by using the dual expression for $\lambda(G)$ 
@@ -319,6 +318,7 @@ between alternate ribs are $90^\circ$. \\
 Lov\'asz then went on to show that the height $h$ of the umbrella, that is, the 
 distance between $0$ and $S$, provides the bound
 
+% ADD IMAGE IN THE LEFT MARGIN
 \marginnote{\hspace*{-1cm}\includegraphics[width=\marginparwidth-30pt]{images/umbrella.png}\\\center\hspace*{-0.8cm}The Lov\'asz umbrella}[-2cm]
 
 \begin{equation}
@@ -331,7 +331,7 @@ this $\Theta(C_5) \leq \sqrt{5}$ follows, and therefore $\Theta(C_5) = \sqrt{5}$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIFTH PAGE
 
-\setsecondpagemargins
+\setnewpagemargins
 
 Let us see how Lov\'asz proceeded to prove the inequality (\ref{four}). (His results 
 were, in fact, much more general.) Consider the usual inner product 
@@ -350,6 +350,7 @@ of $x$, and the angle $\gamma$ between $x$ and $y$ is given by
 
 Thus $\langle x,y \rangle = 0$ if and only if $x$ and $y$ are orthogonal.\\
 
+% ADD IMAGES IN THE RIGHT MARGIN
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-40pt]{images/rectangle.png}\\\vspace*{-5pt}\hspace*{135pt}$b - a$}[28pt]
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-70pt]{images/pentagon.png}\\\center\hspace*{-0.8cm}}[178pt]
 
