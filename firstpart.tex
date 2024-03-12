@@ -161,7 +161,7 @@ definition: The \textit{zero-error capacity} of a graph $G$ is given by
   \Theta(G) := \sup_{n\geq1}\sqrt[n]{\alpha(G^n)},
 \end{equation*}
 
-\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\left\ \ \ \center The graph $C_5 \times C_6$.}
+\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\ \ \ \center The graph $C_5 \times C_6$.}
 
 \noindent and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
 
@@ -188,13 +188,13 @@ is, $x_v \geq 0$ and $\sum_{v \in V} x_v = 1$. To every distribution $x$ we asso
 the ``maximal value of a clique"
 
 \begin{equation*}
-\lambda(x) = \max_{C \in \mathcal{C}} \sum_{v\in C} x_v}.
+\lambda(x) = \max_{C \in \mathcal{C}} \sum_{v\in C} x_v.
 \end{equation*}
 
 \noindent and finally we set
 
 \begin{equation*}
-\lambda(G) = \min_x\lambda(x) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v}.
+\lambda(G) = \min_x\lambda(x) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v.
 \end{equation*}
 
 \noindent To be precise we should use inf instead of min, but the minimum exists
@@ -206,10 +206,10 @@ one vertex from $U$,  we infer $\lambda(x_U) = \frac{1}{\alpha} $,
 and thus by the definition of $\lambda(G)$
 
 \begin{equation*}
-\lambda(G) \leq \frac{1}{\alpha(G)}} \quad \text{or} \quad \alpha(G) \leq \lambda(G)^{-1}.
+\lambda(G) \leq \frac{1}{\alpha(G)} \quad \text{or} \quad \alpha(G) \leq \lambda(G)^{-1}.
 \end{equation*}
 
-What Shannon observed is that $\lamda(G)^{-1}$ is, in fact, an upper bound for all 
+What Shannon observed is that $\lambda(G)^{-1}$ is, in fact, an upper bound for all 
 $\sqrt[n]{\alpha(G^n)}$, and hence also for $\Theta(G)$. In order to prove this it suffices to 
 show that for graphs $G$, $H$
 
@@ -220,10 +220,10 @@ show that for graphs $G$, $H$
 holds, since this will imply $\lambda(G^n) = \lambda(G)^n$ and hence
 
 \begin{equation*}
-  \begin{align}
+  \begin{align*}
   \alpha(G^n) \leq \lambda(G^n)^{-1} = \lambda(G)^{-n} \\
   \sqrt[n]{\alpha(G^n)} \leq \lambda(G)^{-1}.
-  \end{align}
+  \end{align*}
 \end{equation*}
 
 % FIX BIBLIOGRAPHY
@@ -237,12 +237,11 @@ To prove (\ref{one}) we make use of the duality theorem of linear programming
 \noindent where the right-hand side runs through all probability distributions $y = (y_C : C \in \mathcal{C})$
 on $\mathcal{C}$.\\
 Consider $G \times H$, and let $x$ and $x'$ be distributions which achieve the 
-minima, $\lambda(x) = \(G)$, $\lambda(x') = \lambda(H)$. In the vertex set of $G \times H$ we 
+minima, $\lambda(x) = \lambda(G)$, $\lambda(x') = \lambda(H)$. In the vertex set of $G \times H$ we 
 assign the value $z_{(u,v)} = x_ux'_v$ to the vertex $(u, v)$. Since $\sum_{(u,v)}z_{(u,v)} = \sum_u x_u \sum_v x'_v, = 1$, 
 we obtain a distribution. Next we observe that the maximal cliques in 
 $G \times H$ are of the form $C \times D = \{(u, v) : u \in C, v \in D \} $
 where $C$ and $D$ are cliques in $G$ and $H$, respectively. Hence we obtain 
-
 
 \begin{equation*}
   \begin{align}
