@@ -171,7 +171,7 @@ definition: The \textit{zero-error capacity} of a graph $G$ is given by
 \end{equation*}
 
 % Add IMAGE IN THE LEFT MARGIN
-\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\ \ \ \center The graph $C_5 \times C_6$.}
+\marginnote{\includegraphics[width=\marginparwidth-20pt]{images/C5xC6.png}\ \ \ \center The graph $C_5 \times C_5$.}
 
 and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)$.
 
@@ -195,7 +195,7 @@ two vertices of $C$ are joined by an edge. Thus the vertices form trivial
 
 cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
 of size $3$, and so on. Let $C$ be the set of cliques in $G$. Consider an arbitrary 
-probability distribution $x = (x, : v \in V)$ on the set of vertices, that 
+probability distribution $x = (x_v : v \in V)$ on the set of vertices, that 
 is, $x_v \geq 0$ and $\sum_{v \in V} x_v = 1$. To every distribution $x$ we associate 
 the ``maximal value of a clique"
 
@@ -257,8 +257,8 @@ where $C$ and $D$ are cliques in $G$ and $H$, respectively. Hence we obtain
 
 \begin{equation*}
   \begin{align}
-  \lambda(G \times H) \leq \lambda(z) = \max_{C \times D} \sum_{(u,v) \in C \times D} z_(u,v)\\
-  - \max_{C \times D} \sum_{u\in C} x_u \sum_{v \in D} x'_v = \lambda(G)\lambda(H)
+  \lambda(G \times H) \leq \lambda(z)\quad = \quad \max_{C \times D} \sum_{(u,v) \in C \times D} z_(u,v)\\
+  -\quad \max_{C \times D} \sum_{u\in C} x_u \sum_{v \in D} x'_v = \lambda(G)\lambda(H)
   \end{align}
 \end{equation*}
 
@@ -307,8 +307,8 @@ Lov\'asz' main new idea was to represent the vertices $v$ of the graph by
 real vectors of length $1$ such that any two vectors which belong to nonadjacent 
 vertices in $G$ are orthogonal. Let us call such a set of vectors 
 an orthonormal representation of $G$. Clearly, such a representation always 
-exists: just take the unit vectors $(1,0,0,\dotsb,0)^T$, $(0,1,0,\dotsb,0)^T$, \dotsb,
-$(0,0,0,\dotsb,1)^T$ of dimension $m=|V|$.\\
+exists: just take the unit vectors $(1,0,\dotsb,0)^T$, $(0,1,0,\dotsb,0)^T$, \dotsb,
+$(0,0,\dotsb,1)^T$ of dimension $m=|V|$.\\
 
 
 For the graph $C_5$ we may obtain an orthonormal representation in $\mathbb{R}^3$ by 
@@ -340,8 +340,8 @@ were, in fact, much more general.) Consider the usual inner product
   \langle x,y \rangle = x_1y_1 + \dotsb + x_8y_8
 \end{equation*}
 
-of two vectors $x = (x_1, \dotsb, x_8)$, $y = (y_1, \dotsb, y_8)$ in $\mathbb{R}^8$.
-Then $|x|^2 = \langle x,x \rangle = x_1^2 + \dotsb + x_8^2$ is the square of the length $|x|$
+of two vectors $x = (x_1, \dotsb, x_s)$, $y = (y_1, \dotsb, y_s)$ in $\mathbb{R}^s$.
+Then $|x|^2 = \langle x,x \rangle = x_1^2 + \dotsb + x_s^2$ is the square of the length $|x|$
 of $x$, and the angle $\gamma$ between $x$ and $y$ is given by
 
 \begin{equation*}
@@ -362,7 +362,7 @@ Tradition has it that a rectangle was considered aesthetically pleasing
 if, after cutting off a square of length $a$, the remaining rectangle had 
 the same shape as the original one. The side lengths $a$, $b$  of such a
 rectangle must satisfy $\frac{b}{a}= \frac{a}{b-a}$. Setting $\tau := \frac{b}{a}$
-for the ratio, we obtain $\tau = \frac{1}{r-1}$ or $\tau^2 - \tau - 1 = 0$. Solving
+for the ratio, we obtain $\tau = \frac{1}{\tau-1}$ or $\tau^2 - \tau - 1 = 0$. Solving
 the quatratic equation yields the \textit{golden section} $\tau = \frac{1 + \sqrt{5}}{2}$ \approx 1.6180.\\
 
 Consider now a regular pentagon of side length $a$, and let $d$ be the 
@@ -387,7 +387,7 @@ the pentagon $S$,  the reader is invited to prove the relation $s^2 = \frac{d^2}
 (note that $BS$ cuts the diagonal $AC$ at a right angle and halves it). 
 To finish our excursion into geometry, consider now the umbrella 
 with the regular pentagon on top. Since alternate ribs (of length $1$) 
-form a right angle, the theorem of Pythagoras gives us $d = sqrt{2}$, and 
+form a right angle, the theorem of Pythagoras gives us $d = \sqrt{2}$, and 
 hence $s^2 = \frac{2}{\tau + 2} = \frac{4}{\sqrt{5} + 5}$. So, with Pythagoras again, 
 we find for the height $h = |OS|$ our promised result
 
@@ -400,4 +400,3 @@ we find for the height $h = |OS|$ our promised result
 \end{mdframed}
 
 \end{document}
-
