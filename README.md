@@ -14,11 +14,11 @@ Just use your standard LaTeX compiler to compile book into pdf. ( preferably tex
 - [x] Create secondpart.tex template.
 - [x] finish firstpart.
 - [x] fix page numbering.
-- [ ] finish secondpart.
-- [ ] add secondpart margin images and text.
+- [x] finish secondpart.
+- [x] add secondpart margin images and text.
+- [x] Merge firstpart and secondpart.
 - [ ] Add bibliography file and citations.
 - [ ] Check if firstpart correctly retyped.
 - [ ] Check if secondpart correctly retyped.
-- [ ] Merge firstpart and secondpart.
 - [ ] Create Report.
 - [ ] Add Compiling Steps for linux and windows.
