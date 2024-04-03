@@ -6,7 +6,7 @@ The project is divided into two parts, "firstpart.tex" and "secondpart.tex", eac
 
 ![firstpart.tex](https://github.com/xemadp/CWE/blob/main/firstpart.tex) - done by ![Emad Pourhassani](https://github.com/xemadp)
 
-![second\ part.tex](https://github.com/xemadp/CWE/blob/main/second part.tex) - done by ![Afarin Akhoundi](https://github.com/afarin461)
+![secondpart.tex](https://github.com/xemadp/CWE/blob/main/second part.tex) - done by ![Afarin Akhoundi](https://github.com/afarin461)
 
 ![CWE.tex](https://github.com/xemadp/CWE/blob/main/CWE.tex) - Final Document
 
