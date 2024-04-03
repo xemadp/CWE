@@ -701,9 +701,36 @@ $(1, \lambda, \lambda^2, \ldots, \lambda^{m-1})^T$ is an eigenvector of $A$ to t
 In fact, by the set-up of $A$ we find\\
 
 \[
-A \begin{pmatrix} 1 \\ \lambda \\ \lambda^2 \\ \vdots \\ \lambda^{m-1} \end{pmatrix}=
-\begin{pmatrix} \lambda + \lambda^{m-1} \\ \lambda^2 + 1 \\ \lambda^3 + \lambda \\ \vdots \\ 1+\lambda^{m-2} \end{pmatrix} =
-(\lambda + \lambda^{-1}) \begin{pmatrix} 1 \\ \lambda \\ \lambda^2 \\ \vdots \\ \lambda^{m-1} \end{pmatrix} 
+A \begin{pmatrix}
+    \begin{array}{@{}*{5}{r}@{}}
+    1 \\
+    \lambda \\
+    \lambda^2 \\
+    \vdots \\
+    \lambda^{m-1}
+    \end{array}
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \begin{array}{@{}*{5}{l}@{}}
+    \lambda & + & \lambda^{m-1} \\
+    \lambda^2 & + & 1 \\
+    \lambda^3 & + & \lambda \\
+    \vdots & & \vdots \\
+    1 & + & \lambda^{m-2}
+    \end{array}
+\end{pmatrix}
+=
+(\lambda + \lambda^{-1})
+\begin{pmatrix}
+    \begin{array}{@{}*{5}{l}@{}}
+    1 \\
+    \lambda \\
+    \lambda^2 \\
+    \vdots \\
+    \lambda^{m-1}
+    \end{array}
+\end{pmatrix}
 \]
 
 Since the vectors $(1, \lambda, \ldots, \lambda^{m-1})$ are independent (they form a so-
