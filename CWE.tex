@@ -12,6 +12,7 @@
 \usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{xcolor}
 
 
 % Setting Biblatex Styles
@@ -28,8 +29,8 @@
 %                       DEFINING THE THEOREM ENVIRONMENT                          %
 % The Theorem environment 'thm' has a vertical black line to the left of the box  %
 %                                                                                 %
-\newtheorem*{thm}{Theorem}                                                         %
-\surroundwithmdframed[outerlinecolor=white,outerlinewidth=2pt,innerlinewidth=4pt, %
+\newtheorem*{thm}{Theorem}                                                        %
+\surroundwithmdframed[backgroundcolor=gray!15,linecolor=gray!75,linewidth=10pt,   %
   bottomline=false,topline=false,rightline=false]{thm}                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,16 +50,19 @@
 
 % DEFINE ENVIRONMENT FOR QUOTES
 \newmdenv[
-  backgroundcolor=white,
-  linewidth=0pt,
-  innerleftmargin=8pt,
+  backgroundcolor=gray!15,
+  linewidth=10pt,
+  linecolor=gray!60,
+  bottomline=false,
+  topline=false,
+  rightline=false,
+  innerleftmargin=-20pt,
   innertopmargin=10pt,
   innerrightmargin=0pt,
   innerbottommargin=10pt,
   leftmargin=-10pt,
   skipabove=\topsep,
-  skipbelow=\topsep,
-  frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,fill=gray!60,inner sep=4pt] at (frame.north east) {};}
+  skipbelow=\topsep
 ]{quotebox}
 
 \newenvironment{myquote}
@@ -375,7 +379,7 @@ Thus $\langle x,y \rangle = 0$ if and only if $x$ and $y$ are orthogonal.\\
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-40pt]{images/rectangle.png}\\\vspace*{-5pt}\hspace*{135pt}$b - a$}[28pt]
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-70pt]{images/pentagon.png}\\\center\hspace*{-0.8cm}}[178pt]
 
-\begin{mdframed}[nobreak=true]
+\begin{mdframed}[nobreak=true,backgroundcolor=gray!15]
 \vspace{8pt}
 {\Large\textbf{Pentagons and the golden section}}\\
 [5pt]
@@ -688,7 +692,7 @@ agree with the upper bound given in (\ref{eight}). So, twenty years after Lov\'a
 marvelous proof of $\Theta(C_5) = \sqrt{5}$, these problems remain open and are 
 considered very difficult \text{---} but after all we had this situation before.\\
 
-\begin{mdframed}[nobreak=true]
+\begin{mdframed}[nobreak=true,backgroundcolor=gray!15]
 \vspace{8pt}
 {\Large\textbf{The eigenvalues of $C_m$}}
 \vspace{5pt}
