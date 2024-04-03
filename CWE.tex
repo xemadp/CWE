@@ -1,4 +1,4 @@
-\documentclass[12pt]{memoir}
+\documentclass[openany,12pt]{memoir}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{authblk}
@@ -11,6 +11,17 @@
 \usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
+
+
+% Setting Biblatex Styles
+\bibliographystyle{plain}
+\nocite{*} % Include all entries from the BibTeX file
+\let\cleardoublepage\clearpage
+\renewcommand{\bibname}{\Large{References}}
+\renewcommand{\bibsection}{%
+  \section*{\bibname}% Use \section* to suppress numbering
+  \markboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}%
+}
 
 \newtheorem{thm}{Theorem}
 
@@ -665,7 +676,7 @@ precisely the "Lovisz umbrella."\\
 And what about $C_7, C_9,$ and d the other odd cycles? By considering $\alpha(C_m^2)$,
 $\alpha(C_m^3)$ and other small powers the lower bound ${\frac{m-1}{2}} \leq \Theta(C_m)$ ) can cer-
 tainly be increased, but for no odd $m \geq 7$  do the best known lower bounds
-agree with the upper bound given in (8). So, twenty years after Lovasz' which is 3.2141 5 Q(C7) 5 3.3177. 
+agree with the upper bound given in (8). So, twenty years after Lovasz' 
 marvelous proof of $\Theta(C_5) = \sqrt{5}$, these problems remain open and are 
 considered very difficult \text{---} but after all we had this situation before.
 
@@ -709,5 +720,7 @@ is the smallest eigenvalue of A.
 
 \vspace{5pt}
 \end{mdframed}
+
+\bibliography{refs.bib}
 
 \end{document}
