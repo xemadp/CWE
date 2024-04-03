@@ -14,7 +14,7 @@ Corresponding pdf files can be found in the project directory.
 
 # Compiling
 
-Use this link to ![download](https://github.com/xemadp/CWE/archive/refs/heads/main.zip) the project and use your standard latex compiler to compile into pdf.
+Use ![this link](https://github.com/xemadp/CWE/archive/refs/heads/main.zip) to download the project and use your standard latex compiler to compile into pdf.
 The needed CWE.bbl is already present, there is no need to overwrite it with bibtex or biber,
 however doing so will not produce any errors.
 
