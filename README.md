@@ -20,6 +20,6 @@ Just use your standard LaTeX compiler to compile book into pdf. ( preferably tex
 - [x] Merge firstpart and secondpart.
 - [x] Add bibliography file and citations.
 - [ ] Add Compiling Steps for linux and windows.
-- [ ] Check if firstpart correctly retyped.
-- [ ] Check if secondpart correctly retyped.
+- [ ] Proofread firstpart.
+- [ ] Proofread secondpart.
 - [ ] Create Report.
