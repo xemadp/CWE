@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{linear}
+V.~CHVÁTAL.
+\newblock {\em Linear Programming}.
+\newblock Freeman, New York, 1983.
+
+\bibitem{methods}
+W.~HAEMERS.
+\newblock Eigenvalue methods.
+\newblock {\em Packing and covering in combinatorics (A. Schrijver ed.), Math.
+  Centre Tract}, 106:15--38, 1979.
+
+\bibitem{graph}
+L.~LOV{\'A}SZ.
+\newblock On the shannon capacity of a graph.
+\newblock {\em IEEE Trans. Information theory}, 25(1):1--7, 1979.
+
+\bibitem{noisy}
+C.~E. SHANNON.
+\newblock {\em The zero-error capacity of a noisy channel}, volume~3, pages
+  3--15.
+\newblock IRE Trans. Information Theory, 1956.
+
+\end{thebibliography}
