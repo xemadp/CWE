@@ -17,8 +17,8 @@ Just use your standard LaTeX compiler to compile book into pdf. ( preferably tex
 - [x] finish secondpart.
 - [x] add secondpart margin images and text.
 - [x] Merge firstpart and secondpart.
-- [ ] Add bibliography file and citations.
+- [x] Add bibliography file and citations.
+- [ ] Add Compiling Steps for linux and windows.
 - [ ] Check if firstpart correctly retyped.
 - [ ] Check if secondpart correctly retyped.
 - [ ] Create Report.
-- [ ] Add Compiling Steps for linux and windows.
