@@ -7,14 +7,18 @@
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{calc}
-%\usepackage{marginnote}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{biblatex}
 
-\usepackage{sidenotes} 
-\usepackage{lipsum} % provides the dummy text
-\usepackage{mwe}
+% Setting Biblatex Styles
+\bibliographystyle{plain}
+\nocite{*} % Include all entries from the BibTeX file
+\let\cleardoublepage\clearpage
+\renewcommand{\bibname}{\Large{References}}
+\renewcommand{\bibsection}{%
+  \section*{\bibname}% Use \section* to suppress numbering
+  \markboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}%
+}
 
 
 \newtheorem{thm}{Theorem}
@@ -56,14 +60,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SIXTH PAGE
+
 \setnewpagemargins
 
 Now we head for an upper bound "$\Theta(G) \leq \sigma^{-1}$" for the Shannon capacity
 of any graph G that has an especially "nice" orthonormal representation.
 For this let $T = \{v^{(1)},\ldots,v^{(m)}\}$ be an orthonormal representation 
-of G in $\Bbb{R}^{s}$, where $v^{(i)}$ corresponds to the vertex. We assume in
+of G in $\mathbb{R}^{s}$, where $v^{(i)}$ corresponds to the vertex. We assume in
 adition that all the vectors $v^{(i)}$ have the same angle $(\neq 90^{\circ})$ with the
-vector $u := {1 \over m}(v^{(1)}+\ldots+v^{(m)})$, or equivalently that the inner product 
+vector $u := {\frac{1}{m}}(v^{(1)}+\ldots+v^{(m)})$, or equivalently that the inner product 
 
 \[
  \langle v^{(i)}, u\rangle  = \sigma 
@@ -72,32 +77,32 @@ vector $u := {1 \over m}(v^{(1)}+\ldots+v^{(m)})$, or equivalently that the inne
  has the same value $\sigma_T \neq 0$ for all $i$. Let us call this value $\sigma$ the constant
 of the representation $T$. For the Lovisz umbrella that represents Cs the 
 condition $\langle v^{(i)},u \rangle = \sigma_T$ certainly holds, for $u = \overrightarrow{OS}$
-Now we proceed in the following three steps. 
-\\$\mathbf{(A)}$ Consider a probability distribution $x = (x,\ldots, x)$ on V and set
+Now we proceed in the following three steps.\\
+$\mathbf{(A)}$ Consider a probability distribution $x = (x,\ldots, x)$ on V and set
 
 \[
 \mu(x) := |x_1v^{(1)}+\ldots+x_mv^{(m)}|^{2}
 \]
 
-\\and
+and
 
 \[
 {\mu_{T}}(G) := \underset{x}{\inf}\mu(x)
 \]
 
-Let U be a largest independent set in G with $|U| = a$, and define x_U =
-\\$(x_1,\ldots,x_m)$ with $x_i = {1 \over \alpha}$ if $v_i\in U$ and $x_i = 0$  otherwise. Since all 
+Let U be a largest independent set in G with $|U| = a$, and define x_U =\\
+$(x_1,\ldots,x_m)$ with $x_i = {\frac{1}{\alpha}}$ if $v_i\in U$ and $x_i = 0$  otherwise. Since all 
 vectors $v^{(i)}$  have unit length and $\langle v^{(i)}, v^{(j)} \rangle = 0$ for any two non-adjacent 
 vertices, we infer
 
 \[
-\mu_T(G)\leq\mu(x_U)=|\sum_{i=1}^{m}x_iv^{(i)}\\|^2= \sum_{i=1}^{m} {x_i}^2 = \alpha {1 \over \alpha^{2}} = {1 \over \alpha}
+    \mu_T(G)\leq\mu(x_U)=|\sum_{i=1}^{m}x_iv^{(i)}|^2= \sum_{i=1}^{m} {x_i}^2 = \alpha {\frac{1}{\alpha^{2}}} = {\frac{1}{\alpha}}
 \]
 
 Thus we have $\mu_{T}(G) \leq \alpha^{-1}$ , and therefore
 
 \[
-\alpha(G) \leq {1 \over \mu_{T}(G)}
+    \alpha(G) \leq {\frac{1}{\mu_{T}(G)}}
 \]
 
 $\mathbf{(B)}$ Next we compute ${\mu_T}(G)$. We need the Cauchy-Schwarz inequality
@@ -106,7 +111,7 @@ $\mathbf{(B)}$ Next we compute ${\mu_T}(G)$. We need the Cauchy-Schwarz inequali
 \langle a,b \rangle^2 \leq |a|^2 |b|^2
 \]
 
-for vectors a,b \in \Bbb{R}^s. Applied to $a = x_{1}v^{(1)}+\ldots+x_{m}v^{(m)}$ and $b=u$,
+for vectors a,b \in \mathbb{R}^s. Applied to $a = x_{1}v^{(1)}+\ldots+x_{m}v^{(m)}$ and $b=u$,
 the inequality yields
 
 \begin{equation}
@@ -132,7 +137,7 @@ distribution $({\frac 1 m}, \ldots, {\frac 1 m}})$,which implies $|u|^2 = \sigma
 On the other hand, for $x = ({\frac 1 m}, \ldots, {\frac 1 m}})$  we obtain
 
 \[
-\mu_{T}(G) \leq \mu(x) = |{1 \over m}(v^{(1)}+\ldots+v^{(m)})|^2 = |u|^2 = \sigma_T 
+\mu_{T}(G) \leq \mu(x) = |{\frac{1}{m}}(v^{(1)}+\ldots+v^{(m)})|^2 = |u|^2 = \sigma_T 
 \]
 
 and so we have proved 
@@ -144,19 +149,19 @@ and so we have proved
 In summary, we have established the inequality 
 
 \begin{equation}
-\alpha(G) \leq {1 \over \sigma_T} \label{seven}  
+    \alpha(G) \leq {\frac{1}{\sigma_T}} \label{seven}  
 \end{equation}
 
-for any orthonormal respresentation T with constant \sigma_T.
-\\$\mathbf{(C)}$ \text{To extend this inequality to \spaceskip} $\Theta(G)$, we proceed as before. Consider 
+for any orthonormal respresentation T with constant $\sigma_T$.\\
+$\mathbf{(C)}$ \text{To extend this inequality to \spaceskip} $\Theta(G)$, we proceed as before. Consider 
 again the product $G \times H$ of two graphs. Let G and H have orthonormal 
-representations R and S in $\Bbb{R}^r$ \text{and} $\Bbb{R}^s$, respectively, with constants $\sigma_R$
+representations R and S in $\mathbb{R}^r$ \text{and} $\mathbb{R}^s$, respectively, with constants $\sigma_R$
 and $\sigma_S$. Let $v = (v_1,\ldots,v_r)$ be a vector in R and $w = (w_1,\ldots,w_s)$ be 
 a vector in S. To the vertex in $G \times H$ corresponding to the pair (v, w) we 
 associate the vector
 
 \[
-vw^T := ({v_1}{w_1},\ldots,{v_1}{w_s},{v_2}{w_1},\ldots,{v_2}{w_s},\ldots,{v_r}{w_1},\ldots,{v_r}{w_s}) \in \Bbb{R}^{rs}
+vw^T := ({v_1}{w_1},\ldots,{v_1}{w_s},{v_2}{w_1},\ldots,{v_2}{w_s},\ldots,{v_r}{w_1},\ldots,{v_r}{w_s}) \in \mathbb{R}^{rs}
 \]
 
 It is immediately checked that $R \times S := \{vw^T : v \in R, w \in S\}$ is an
@@ -176,24 +181,26 @@ means
 
 and by (7) we obtain
 
+
 \[
 \alpha(G^n) \leq \sigma_{T}^{-n},  \quad   \sqrt[n]{\alpha(G^n)} \leq \sigma_{T}^{-1}
 \]
 
 Taking all things together we have thus completed Lovlsz' argument: 
 
+
 \begin{thm}\label{theorem}
 whenever $T = \{v^{(1)}, \ldots, v^{(m)}\}$) is an orthonormal 
 representation of G with constant \sigma_T, then
 
 \begin{equation}
-\Theta(G) \leq {1 \over \sigma_T}  \label{eight}
+    \Theta(G) \leq {\frac{1}{\sigma_T}}  \label{eight}
 \end{equation}
 
 \end{thm}
 
-Looking at the Lovlsz umbrella, we have $u = (0, 0, h = {1 \over {\sqrt[4]{5}}})^T$ and hence
-$\sigma = \langle v^{(i)}, u \rangle = h^2 = {1 \over \sqrt[]{5}}$, which yields $\Theta(C_5) \leq \sqrt{5}$. Thus Shannon's 
+Looking at the Lovlsz umbrella, we have $u = (0, 0, h = {\frac{1}{\sqrt[4]{5}}})^T$ and hence
+$\sigma = \langle v^{(i)}, u \rangle = h^2 = {\frac{1}{\sqrt{5}}}$, which yields $\Theta(C_5) \leq \sqrt{5}$. Thus Shannon's 
 problem is solved.
 
 
@@ -203,13 +210,13 @@ problem is solved.
 Let us carry our discussion a little further. We see from (8) that the larger $\sigma_T$
 is for a representation of G, the better a bound for $\Theta(G)$ we will get. Here 
 is a method that gives us an orthonormal representation for any graph G. 
-To $G = (V, E)$ we associate the adjacency matrix $A = (a_{ij})$ , which is 
+To $G = (V, E)$ we associate the adjacency matrix $A = (a_{ij})$, which is 
 defined as follows: Let $V = \{v_1,\ldots,v_m\}$, then we set
 
 \[
 a_{ij} := \left\{ \begin{array}{rcl}
-  1 & \mbox{if $v_i v_j \in E$}
-  \\ 0 & \mbox{otherwise}
+  1 & \mbox{if $v_i v_j \in E$}\\
+  0 & \mbox{otherwise.}
   \end{array}\right.
 \]
 
@@ -222,73 +229,75 @@ entries of A, that is, 0. Hence the smallest eigenvalue must be negative
 the absolute value of the smallest eigenvalue, and consider the matrix
 
 \[
-M := 1 + {1 \over p}A  
+M := 1 + {\frac{1}{p}}A,
 \]
 
 where I denotes the $(m \times m)$-identity matrix. This M has the eigenvalues
-$1+{\lambda_1 \over p} \geq 1+{\lambda_2 \over p} \geq \ldots \geq 1+{\lambda_m \over p} =0$. Now we quote the second result (the
+$1+{\frac{lambda_1}{p}} \geq 1+{\frac{lambda_2}{p}} \geq \ldots \geq 1+{\frac{lambda_m}{p}} =0$. Now we quote the second result (the
 principal axis theorem of linear algebra): If $M = (m_{ij})$ is a real symmetric 
-matrix with all eigenvalues $\geq 0$, , then there are vectors $v^{(1)}, \ldots, v^{(m)} \in \Bbb{R}^s$
+matrix with all eigenvalues $\geq 0$, , then there are vectors $v^{(1)}, \ldots, v^{(m)} \in \mathbb{R}^s$
 for $s = rank(M)$, such that 
 
 \[
 m_{ij} = \langle v^{(i)}, v^{(j)} \rangle  \quad  (1 \leq i,j \leq m).
 \]
 
-In particular, for $M = I + {1 \over p}A$ we obtain
+In particular, for $M = I + {\frac{1}{p}}A$ we obtain
 
 \[
 \langle v^{(i)}, v^{(i)} \rangle = m_{ii} = 1  \quad \text{for all i}
 \]
 
-\\and
+and
 
 \[
-\langle v^{(i)}, v^{(j)} \rangle = {1 \over p}a_{ij} \quad \text{for $i \neq j$}
+\langle v^{(i)}, v^{(j)} \rangle = {\frac{1}{p}}a_{ij} \quad \text{for $i \neq j$}
 \]
 
 Since $a_{ij} = 0 $ whenever $ v_i v_j \notin E$, we see that the vectors $v(^{(1)},\ldots,v^{(m)})$
 form indeed an orthonormal representation of G. 
 Let us, finally, apply this construction to the m-cycles $C_m$ for odd $m > 5$. 
-Here one easily computes $p = |\lambda_{min}| = 2\cos{\pi \over m}$ (see the box). Every 
+Here one easily computes $p = |\lambda_{min}| = 2\cos{\frac{pi}{m}}$ (see the box). Every 
 row of the adjacency matrix contains two I 's, implying that every row of 
-the matrix M sums to $1 + {2 \over p}$. For the representation $\{ v^{(1)}, \ldots, v^{(m)}\}$ this
+the matrix M sums to $1 + {\frac{2}{p}}$. For the representation $\{ v^{(1)}, \ldots, v^{(m)}\}$ this
 means
 
 \[ 
-\langle v^{(i)},v^{(1)}+ \ldots + v^{(m)} \rangle=1+{2 \over p}=1+{1 \over {\cos{\pi \over m}}}
+    \langle v^{(i)},v^{(1)}+ \ldots + v^{(m)} \rangle=1+{\frac{2}{p}}=1+{\frac{1}{\cos{\frac{pi}{m}}}}
 \]
 
 and hence 
 
 \[
-\langle v^{(i)},u \rangle = {1 \over m}(1+(\cos{\pi \over m})^{-1})=\sigma
+\langle v^{(i)},u \rangle = {\frac{1}{m}}(1+(\cos{\frac{pi}{m}})^{-1})=\sigma
 \]
 
 for all i. We can therefore apply our main result (8) and conclude
 
 \begin{equation}
-\Theta(C_m) \leq {m \over {1+(\cos{\pi \over m})^{-1}}} \quad \label{nine}    
+    \Theta(C_m) \leq {\frac{m}{1+(\cos{\frac{pi}{m}})^{-1}}} \quad \label{nine}    
 \end{equation}
 
 
 %9th page
 \setnewpagemargins
 
-Notice that because of $\cos{\pi \over m} < 1$ the bound (9) is better than the bound 
-$\Theta(C_m) \leq {m \over 2}$ we found before. Note further $\cos{\pi \over 5} = {\tau \over 2}$, where $\tau = {{\sqrt{5}+1} \over 2}$
+Notice that because of $\cos{\frac{pi}{m}} < 1$ the bound (9) is better than the bound 
+$\Theta(C_m) \leq {\frac{m}{2}}$ we found before. Note further $\cos{\frac{pi}{5}} = {\frac{tau}{2}}$, where $\tau = {\frac{\sqrt{5}+1}{2}}$
 is the golden section. Hence for $m = 5$ we again obtain
 
 \[
-\Theta(C_5) \leq {5 \over {1 + {4 \over {\sqrt{5}+1}}}}={{5(\sqrt{5}+1)} \over {5+\sqrt{5}}} = \sqrt{5}.
+\Theta(C_5) \leq {\frac{5}{1 + {\frac{4}{\sqrt{5}+1}}}}={\frac{5(\sqrt{5}+1)}{5+\sqrt{5}}} = \sqrt{5}.
 \]
 
 The orthonormal representation given by this construction is, of course, 
-precisely the "Lovisz umbrella." 
+precisely the "Lovisz umbrella."\\
+
+
 And what about $C_7, C_9,$ and d the other odd cycles? By considering $\alpha(C_m^2)$,
-$\alpha(C_m^3)$ and other small powers the lower bound ${{m-1} \over 2} \leq \Theta(C_m)$ ) can cer-
+$\alpha(C_m^3)$ and other small powers the lower bound ${\frac{m-1}{2}} \leq \Theta(C_m)$ ) can cer-
 tainly be increased, but for no odd $m \geq 7$  do the best known lower bounds
-agree with the upper bound given in (8). So, twenty years after Lovasz' which is 3.2141 5 Q(C7) 5 3.3177. 
+agree with the upper bound given in (8). So, twenty years after Lovasz' 
 marvelous proof of $\Theta(C_5) = \sqrt{5}$, these problems remain open and are 
 considered very difficult \text{---} but after all we had this situation before.
 
@@ -299,35 +308,33 @@ considered very difficult \text{---} but after all we had this situation before.
 
 Look at the adjacency matrix A of the cycle $C_m$. To find the eigen-
 values (and eigenvectors) we use the m-th roots of unity. These are 
-given by $1, \zeta, \xeta^2, \ldots, \zeta^{m-1}$ for $\zeta = e^{{2\pi i} \over m}$ --- see the box on page 25. 
+given by $1, \zeta, \xeta^2, \ldots, \zeta^{m-1}$ for $\zeta = e^{\frac{2\pi i}{m}}$ --- see the box on page 25. 
 Let $\lambda = \zeta ^k$  be any of these roots, then we claim that
 $(1, \lambda, \lambda^2, \ldots, \lambda^{m-1})^T$  is an eigenvector of A to the eigenvalue $\lambda + \lambda^{-1}$.
 In fact, by the set-up of A we find
 
-\begin{equation*}
-
+\[
 A \begin{pmatrix} 1 \\ \lambda \\ \lambda^2 \\ \vdots \\ \lambda^{m-1} \end{pmatrix}=
 \begin{pmatrix} \lambda + \lambda^{m-1} \\ \lambda^2 + 1 \\ \lambda^3 + \lambda \\ \vdots \\ 1+\lambda^{m-2} \end{pmatrix} =
 (\lambda + \lambda^{-1}) \begin{pmatrix} 1 \\ \lambda \\ \lambda^2 \\ \vdots \\ \lambda^{m-1} \end{pmatrix} 
-
-\end{equation*}
+\]
 
 Since the vectors $(1, \lambda, \ldots, \lambda^{m-1})$ are independent (they form a so-
 called Vandermonde matrix) we conclude that for odd m
 
-\begin{equation*} 
-\begin{align}
-\zeta^k + \zeta^{-k} = [(\cos(2k\pi / m)) + i\sin(2k\pi / m)]\\
-+[\cos(2k\pi/m) - i\sin(2k\pi / m)]\\
-=  2\cos(2k\pi / m) \quad (0 \leq k \leq {{m-1} \over 2})
-\end{align}
+\begin{equation*}
+\begin{aligned}
+    \zeta^k + \zeta^{-k}&\quad = [(\cos(2k\pi / m)) + i\sin(2k\pi / m)]\\
+&\quad + [\cos(2k\pi/m) - i\sin(2k\pi / m)]\\
+&\quad =  2\cos(2k\pi / m) \quad (0 \leq k \leq {\frac{m-1}{2}})
+\end{aligned}
 \end{equation*}
 
 are all the eigenvalues of A. Now the cosine is a decreasing function,
 and So
 
 \[
-2\cos({{(m-1)\pi} \over m}) = -2\cos{\pi \over m}
+    2\cos({\frac{(m-1)\pi}{m}}) = -2\cos{\frac{pi}{m}}
 \]
 
 is the smallest eigenvalue of A. 
@@ -335,53 +342,7 @@ is the smallest eigenvalue of A.
 \vspace{5pt}
 \end{mdframed}
 
-%10th page
-\setnewpagemargins
-
-\addbibresource{mybib1.bib}
-\cite{linear}
-\cite{methods}
-\cite{graph}
-\cite{noisy}
-\printbibliography
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% REFERENCES
+\bibliography{refs.bib}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
