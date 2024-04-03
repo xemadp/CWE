@@ -10,8 +10,13 @@ The project is divided into two parts, "firstpart.tex" and "secondpart.tex", eac
 
 ![CWE.tex](https://github.com/xemadp/CWE/blob/main/CWE.tex) - Final Document
 
+Corresponding pdf files can be found in the project directory.
+
 # Compiling
-Just use your standard LaTeX compiler to compile book into pdf. ( preferably texlive )
+
+Use this link to ![download](https://github.com/xemadp/CWE/archive/refs/heads/main.zip) the project and use your standard latex compiler to compile into pdf.
+The needed CWE.bbl is already present, there is no need to overwrite it with bibtex or biber,
+however doing so will not produce any errors.
 
 # TODO
 
