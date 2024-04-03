@@ -12,7 +12,6 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
-
 \newtheorem{thm}{Theorem}
 
 % Set the left and right margin for the header
@@ -618,33 +617,33 @@ and
 Since $a_{ij} = 0 $ whenever $ v_i v_j \notin E$, we see that the vectors $v(^{(1)},\ldots,v^{(m)})$
 form indeed an orthonormal representation of G. 
 Let us, finally, apply this construction to the m-cycles $C_m$ for odd $m > 5$. 
-Here one easily computes $p = |\lambda_{min}| = 2\cos{\\frac{pi}{m}}$ (see the box). Every 
+Here one easily computes $p = |\lambda_{min}| = 2\cos{\frac{pi}{m}}$ (see the box). Every 
 row of the adjacency matrix contains two I 's, implying that every row of 
 the matrix M sums to $1 + {\frac{2}{p}}$. For the representation $\{ v^{(1)}, \ldots, v^{(m)}\}$ this
 means
 
 \[ 
-    \langle v^{(i)},v^{(1)}+ \ldots + v^{(m)} \rangle=1+{\frac{2}{p}}=1+{\frac{1}{\cos{\\frac{pi}{m}}}}
+    \langle v^{(i)},v^{(1)}+ \ldots + v^{(m)} \rangle=1+{\frac{2}{p}}=1+{\frac{1}{\cos{\frac{pi}{m}}}}
 \]
 
 and hence 
 
 \[
-\langle v^{(i)},u \rangle = {\frac{1}{m}}(1+(\cos{\\frac{pi}{m}})^{-1})=\sigma
+\langle v^{(i)},u \rangle = {\frac{1}{m}}(1+(\cos{\frac{pi}{m}})^{-1})=\sigma
 \]
 
 for all i. We can therefore apply our main result (8) and conclude
 
 \begin{equation}
-    \Theta(C_m) \leq {\frac{m}{1+(\cos{\\frac{pi}{m}})^{-1}}} \quad \label{nine}    
+    \Theta(C_m) \leq {\frac{m}{1+(\cos{\frac{pi}{m}})^{-1}}} \quad \label{nine}    
 \end{equation}
 
 
 %9th page
 \setnewpagemargins
 
-Notice that because of $\cos{\\frac{pi}{m}} < 1$ the bound (9) is better than the bound 
-$\Theta(C_m) \leq {\frac{m}{2}}$ we found before. Note further $\cos{\\frac{pi}{5}} = {\\frac{tau}{2}}$, where $\tau = {\frac{\sqrt{5}+1}{2}}$
+Notice that because of $\cos{\frac{pi}{m}} < 1$ the bound (9) is better than the bound 
+$\Theta(C_m) \leq {\frac{m}{2}}$ we found before. Note further $\cos{\frac{pi}{5}} = {\frac{tau}{2}}$, where $\tau = {\frac{\sqrt{5}+1}{2}}$
 is the golden section. Hence for $m = 5$ we again obtain
 
 \[
@@ -703,19 +702,12 @@ are all the eigenvalues of A. Now the cosine is a decreasing function,
 and So
 
 \[
-    2\cos({\frac{(m-1)\pi}{m}}) = -2\cos{\\frac{pi}{m}}
+    2\cos({\frac{(m-1)\pi}{m}}) = -2\cos{\frac{pi}{m}}
 \]
 
 is the smallest eigenvalue of A. 
 
 \vspace{5pt}
 \end{mdframed}
-
-%10th page
-\setnewpagemargins
-
-%
-% INSERT BIBLIOGRAPHY HERE!
-%
 
 \end{document}
