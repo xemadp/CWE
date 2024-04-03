@@ -1,11 +1,12 @@
 # CWE
 Rewriting the chapter "Communicating Without Errors" from the book "proofs from THE BOOK" in Latex.
 
-# Files
-This project contains two parts, the file "firstpart.tex" contains the first five pages. Similarly the file "secondpart.tex" contains the second five pages.
-each part is done by a team member.
+# Project Overview
+The project is divided into two parts, "firstpart.tex" and "secondpart.tex", each authored by different team members. The first five pages are covered in "firstpart.tex", while "secondpart.tex" contains subsequent five pages. The consolidated document, "CWE.tex", combines both parts and includes correct bibliography styling.
 
-The file CWE.tex (and CWE.pdf respectively) has both the firstpart and the secondpart, also the correct stylings for the bibliography.
+![firstpart.tex](https://github.com/xemadp/CWE/blob/main/firstpart.tex) - done by ![Emad Pourhassani](https://github.com/xemadp)
+![second part.tex](https://github.com/xemadp/CWE/blob/main/second part.tex) - done by ![Afarin Akhoundi](https://github.com/afarin461)
+![CWE.tex](https://github.com/xemadp/CWE/blob/main/CWE.tex) - Final Document
 
 # Compiling
 Just use your standard LaTeX compiler to compile book into pdf. ( preferably texlive )
