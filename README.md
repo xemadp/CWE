@@ -8,7 +8,7 @@ The project is divided into two parts, "firstpart.tex" and "secondpart.tex", eac
 
 ![secondpart.tex](https://github.com/xemadp/CWE/blob/main/secondpart.tex) - done by ![Afarin Akhoundi](https://github.com/afarin461)
 
-![CWE.tex](https://github.com/xemadp/CWE/blob/main/CWE.tex) - Final Document
+![CWE.tex](https://github.com/xemadp/CWE/blob/main/CWE.tex) - Final Joint Document
 
 Corresponding pdf file for CWE.tex can be found in the project directory.
 
