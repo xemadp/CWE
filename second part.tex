@@ -1,71 +1,3 @@
-\documentclass[12pt]{memoir}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{authblk}
-\usepackage{xcolor}
-\usepackage[framemethod=tikz]{mdframed}
-\usepackage{tikz}
-\usepackage{fancyhdr}
-\usepackage{calc}
-\usepackage{graphicx}
-\usepackage{hyperref}
-
-% Setting Biblatex Styles
-\bibliographystyle{plain}
-\nocite{*} % Include all entries from the BibTeX file
-\let\cleardoublepage\clearpage
-\renewcommand{\bibname}{\Large{References}}
-\renewcommand{\bibsection}{%
-  \section*{\bibname}% Use \section* to suppress numbering
-  \markboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       DEFINING THE THEOREM ENVIRONMENT                          %
-% The Theorem environment 'thm' has a vertical black line to the left of the box  %
-%                                                                                 %
-\newtheorem*{thm}{Theorem}                                                        %
-\surroundwithmdframed[outerlinecolor=white,outerlinewidth=2pt,innerlinewidth=4pt, %
-  bottomline=false,topline=false,rightline=false]{thm}                            %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Set the left and right margin for the header
-\setlength{\headwidth}{200pt}
-\pagestyle{fancy}
-\fancyhf{} % Empty Headers
-\fancyhead[LE]{\thepage} % Page number on left for even pages
-\fancyhead[RO]{\thepage} % Page number on right for odd pages
-\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages
-\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages
-
-% REMOVE ALL INDENTATION ON PARAGRAPHS
-\setlength{\parindent}{0pt}
-
-% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER
-\renewcommand{\theequation}{\arabic{equation}}
-
-% DEFINE DOCUMENT MARGINS
-\setulmarginsandblock{2cm}{0.5cm}{*}
-\setlrmarginsandblock{0.5cm}{8cm}{*}
-\checkandfixthelayout
-
-% DEFINE MARGINS FOR THE NEW PAGES
-\newcommand{\setnewpagemargins}{
-    \clearpage
-    \checkandfixthelayout
-}
-
-% SET UP BOX LINE WIDTH
-\mdfsetup{linewidth=1pt}
-
-% FIX PAGE NUMBERING
-\setcounter{page}{218} % FIX PAGE NUMBERING %
-
-
-% BEGINNING DOCUMENT
-\begin{document}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SIXTH PAGE
 
@@ -307,7 +239,7 @@ agree with the upper bound given in (\ref{eight}). So, twenty years after Lov\'a
 marvelous proof of $\Theta(C_5) = \sqrt{5}$, these problems remain open and are 
 considered very difficult \text{---} but after all we had this situation before.\\
 
-\begin{mdframed}[nobreak=true]
+\begin{mdframed}[nobreak=true,backgroundcolor=gray!15]
 \vspace{8pt}
 {\Large\textbf{The eigenvalues of $C_m$}}
 \vspace{5pt}
@@ -356,5 +288,3 @@ is the smallest eigenvalue of $A$.
 
 % REFERENCES
 \bibliography{refs.bib}
-
-\end{document}

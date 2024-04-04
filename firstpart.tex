@@ -1,75 +1,3 @@
-\documentclass[12pt]{memoir}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{authblk}
-\usepackage{xcolor}
-\usepackage{mdframed}
-\usepackage{tikz}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{calc}
-\usepackage{marginnote}
-\usepackage{graphicx}
-\usepackage{hyperref}
-
-% Set the left and right margin for the header
-\pagestyle{fancy}
-\fancyhf{} % Empty Headers
-\fancyhead[LE]{\thepage} % Page number on left for even pages
-\fancyhead[RO]{\thepage} % Page number on right for odd pages
-\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages
-\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages
-
-% REMOVE ALL INDENTATION ON PARAGRAPHS
-\setlength{\parindent}{0pt}
-
-% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER
-\renewcommand{\theequation}{\arabic{equation}}
-
-% DEFINE ENVIRONMENT FOR QUOTES
-\newmdenv[
-  backgroundcolor=white,
-  linewidth=0pt,
-  innerleftmargin=8pt,
-  innertopmargin=10pt,
-  innerrightmargin=0pt,
-  innerbottommargin=10pt,
-  leftmargin=-10pt,
-  skipabove=\topsep,
-  skipbelow=\topsep,
-  frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,fill=gray!60,inner sep=4pt] at (frame.north east) {};}
-]{quotebox}
-
-\newenvironment{myquote}
-{\begin{quotebox}\begin{quote}}
-{\end{quote}\end{quotebox}}
-
-% DEFINE DOCUMENT MARGINS
-\setlrmarginsandblock{0.5cm}{8cm}{*}
-\setulmarginsandblock{0}{0cm}{*}
-\checkandfixthelayout
-
-% DEFINE MARGINS FOR NEW PAGES
-\newcommand{\setnewpagemargins}{
-    \clearpage
-    \setulmarginsandblock{2cm}{0.5cm}{*}
-    \checkandfixthelayout
-}
-
-% SET UP BOX LINE WIDTH
-\mdfsetup{linewidth=1pt}
-
-%% SET CORRECT CHAPTER AND PAGE NUMBERS %%
-\setcounter{chapter}{32}
-\setcounter{page}{213} % FIX PAGE NUMBERING %
-
-% ADJUST SPACE BEFORE AND AFTER CHAPTER TITLE
-\setlength{\beforechapskip}{5pt}
-\setlength{\afterchapskip}{55pt}
-
-% BEGINNING DOCUMENT
-\begin{document}
-
 \chapter{Communicating without errors}
 
 % Add TWO IMAGES IN THE RIGHT MARGIN
@@ -354,7 +282,7 @@ Thus $\langle x,y \rangle = 0$ if and only if $x$ and $y$ are orthogonal.\\
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-40pt]{images/rectangle.png}\\\vspace*{-5pt}\hspace*{135pt}$b - a$}[28pt]
 \marginnote{\hspace*{8pt}\includegraphics[width=\marginparwidth-70pt]{images/pentagon.png}\\\center\hspace*{-0.8cm}}[178pt]
 
-\begin{mdframed}[nobreak=true]
+\begin{mdframed}[nobreak=true,backgroundcolor=gray!15]
 \vspace{8pt}
 {\Large\textbf{Pentagons and the golden section}}\\
 [5pt]
@@ -398,6 +326,3 @@ we find for the height $h = |OS|$ our promised result
 \vspace{5pt}
 
 \end{mdframed}
-
-\end{document}
-
