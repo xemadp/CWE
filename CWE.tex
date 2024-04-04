@@ -1,17 +1,14 @@
-\documentclass[openany,12pt]{memoir}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{authblk}
-\usepackage{xcolor}
-\usepackage[framemethod=tikz]{mdframed}
-\usepackage{tikz}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{calc}
-\usepackage{marginnote}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\documentclass[openany,12pt]{memoir} % Memoir DocumentClass For Extensive Margin Resize.
+
+\usepackage{amsmath} % For Trivial Math.
+\usepackage{amssymb} % For More Comprehensive Math Symbols.
+\usepackage{amsthm}  % For Robust Theorem Configuration.
+\usepackage[framemethod=tikz]{mdframed} % Create Boxes and Frames.
+\usepackage{fancyhdr} % Fancy Headers.
+\usepackage{marginnote} % Placement of margin text and images.
+\usepackage{calc} % Calculation of sizes for margins.
+\usepackage{graphicx} % Placement of images within document. 
+\usepackage{hyperref} % Practical Referencing of Equations.
 
 
 % INCLUDE THE PREAMBLE FILE, CONSISTS OF CUSTOM CONFIGURATIONS AND STYLES FOR COMMANDS.
@@ -20,8 +17,11 @@
 % BEGINNING DOCUMENT
 \begin{document}
 
+% input first five pages.
 \input{firstpart.tex}
 
+% input second five pages (contains bibliography).
 \input{secondpart.tex}
 
+% ENDING DOCUMENT.
 \end{document}
