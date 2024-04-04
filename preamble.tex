@@ -4,92 +4,92 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                            SETTING BIBTEX STYLES                                %
-\bibliographystyle{plain}                                                         %
-\nocite{*} % Include all entries from the BibTeX file                             %
-\let\cleardoublepage\clearpage                                                    %
-\renewcommand{\bibname}{\Large{References}}                                       %
-\renewcommand{\bibsection}{                                                       %
-  \section*{\bibname}% Use \section* to suppress numbering                        %
-  \markboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}                   %
-}                                                                                 %
+%                            SETTING BIBTEX STYLES                                 
+\bibliographystyle{plain}                                                          
+\nocite{*} % Include all entries from the BibTeX file                              
+\let\cleardoublepage\clearpage                                                     
+\renewcommand{\bibname}{\Large{References}}                                        
+\renewcommand{\bibsection}{                                                        
+  \section*{\bibname}% Use \section* to suppress numbering                         
+  \markboth{\MakeUppercase{\bibname}}{\MakeUppercase{\bibname}}                    
+}                                                                                  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       DEFINING THE THEOREM ENVIRONMENT                          %
-%                                                                                 %
-\newtheorem*{thm}{Theorem}                                                        %
-\surroundwithmdframed[outerlinecolor=white,outerlinewidth=2pt,innerlinewidth=4pt, %
-  bottomline=false,topline=false,rightline=false]{thm}                            %
+%                       DEFINING THE THEOREM ENVIRONMENT                           
+%                                                                                  
+\newtheorem*{thm}{Theorem}                                                         
+\surroundwithmdframed[outerlinecolor=white,outerlinewidth=2pt,innerlinewidth=4pt,  
+  bottomline=false,topline=false,rightline=false]{thm}                             
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                  SET THE LEFT AND RIGHT MARGIN FOR THE HEADER                   %
-\pagestyle{fancy}                                                                 %
-\fancyhf{} % Empty Headers                                                        %
-\fancyhead[LE]{\thepage} % Page number on left for even pages                     %
-\fancyhead[RO]{\thepage} % Page number on right for odd pages                     %
-\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages      %
-\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages       %
+%                  SET THE LEFT AND RIGHT MARGIN FOR THE HEADER                    
+\pagestyle{fancy}                                                                  
+\fancyhf{} % Empty Headers                                                         
+\fancyhead[LE]{\thepage} % Page number on left for even pages                      
+\fancyhead[RO]{\thepage} % Page number on right for odd pages                      
+\fancyhead[RE]{\textit{Communicating without errors}} % Header on even pages       
+\fancyhead[LO]{\textit{Communicating without errors}} % Header on odd pages        
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                         DEFINE ENVIRONMENT FOR QUOTES                           %
-\newmdenv[                                                                        %
-  backgroundcolor=white,                                                          %
-  linewidth=0pt,                                                                  %
-  innerleftmargin=8pt,                                                            %
-  innertopmargin=10pt,                                                            %
-  innerrightmargin=0pt,                                                           %
-  innerbottommargin=10pt,                                                         %
-  leftmargin=-10pt,                                                               %
-  skipabove=\topsep,                                                              %
-  skipbelow=\topsep,                                                              %
-  frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,  %
-  fill=gray!60,inner sep=4pt] at (frame.north east) {};}                          %
-]{quotebox}                                                                       %
-                                                                                  %
-\newenvironment{myquote}                                                          %
-{\begin{quotebox}\begin{quote}}                                                   %
-{\end{quote}\end{quotebox}}                                                       %
+%                         DEFINE ENVIRONMENT FOR QUOTES                            
+\newmdenv[                                                                         
+  backgroundcolor=white,                                                           
+  linewidth=0pt,                                                                   
+  innerleftmargin=8pt,                                                             
+  innertopmargin=10pt,                                                             
+  innerrightmargin=0pt,                                                            
+  innerbottommargin=10pt,                                                          
+  leftmargin=-10pt,                                                                
+  skipabove=\topsep,                                                               
+  skipbelow=\topsep,                                                               
+  frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,   
+  fill=gray!60,inner sep=4pt] at (frame.north east) {};}                           
+]{quotebox}                                                                        
+                                                                                   
+\newenvironment{myquote}                                                           
+{\begin{quotebox}\begin{quote}}                                                    
+{\end{quote}\end{quotebox}}                                                        
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                               DEFINE DOCUMENT MARGINS                           %
-\setlrmarginsandblock{0.5cm}{8cm}{*}                                              %
-\setulmarginsandblock{0}{0cm}{*}                                                  %
-\checkandfixthelayout                                                             %
+%                               DEFINE DOCUMENT MARGINS                            
+\setlrmarginsandblock{0.5cm}{8cm}{*}                                               
+\setulmarginsandblock{0}{0cm}{*}                                                   
+\checkandfixthelayout                                                              
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                             DEFINE MARGINS FOR NEW PAGES                        %
-\newcommand{\setnewpagemargins}{                                                  %
-    \clearpage                                                                    %
-    \setulmarginsandblock{2cm}{0.5cm}{*}                                          %
-    \checkandfixthelayout                                                         %
-}                                                                                 %
+%                             DEFINE MARGINS FOR NEW PAGES                         
+\newcommand{\setnewpagemargins}{                                                   
+    \clearpage                                                                     
+    \setulmarginsandblock{2cm}{0.5cm}{*}                                           
+    \checkandfixthelayout                                                          
+}                                                                                  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                              CHAPTER CONFIG                                     %
-                                                                                  %
-%SET CORRECT CHAPTER AND PAGE NUMBERS                                             %
-\setcounter{chapter}{32}                                                          %
-\setcounter{page}{213} % FIX PAGE NUMBERING %                                     %
-                                                                                  %
-% ADJUST SPACE BEFORE AND AFTER CHAPTER TITLE                                     %
-\setlength{\beforechapskip}{5pt}                                                  %
-\setlength{\afterchapskip}{55pt}                                                  %
+%                              CHAPTER CONFIG                                      
+                                                                                   
+%SET CORRECT CHAPTER AND PAGE NUMBERS                                              
+\setcounter{chapter}{32}                                                           
+\setcounter{page}{213} % FIX PAGE NUMBERING %                                      
+                                                                                   
+% ADJUST SPACE BEFORE AND AFTER CHAPTER TITLE                                      
+\setlength{\beforechapskip}{5pt}                                                   
+\setlength{\afterchapskip}{55pt}                                                   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                    MISC                                         %
-% REMOVE ALL INDENTATION ON PARAGRAPHS                                            % 
-\setlength{\parindent}{0pt}                                                       %
-                                                                                  %
-% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER                                 %
-\renewcommand{\theequation}{\arabic{equation}}                                    %
-                                                                                  %
-% SET UP BOX LINE WIDTH                                                           %
-\mdfsetup{linewidth=1pt}                                                          %
+%                                    MISC                                          
+% REMOVE ALL INDENTATION ON PARAGRAPHS                                              
+\setlength{\parindent}{0pt}                                                        
+                                                                                   
+% REDEFINE \theequation TO EXCLUDE CHAPTER NUMBER                                  
+\renewcommand{\theequation}{\arabic{equation}}                                     
+                                                                                   
+% SET UP BOX LINE WIDTH                                                            
+\mdfsetup{linewidth=1pt}                                                           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
