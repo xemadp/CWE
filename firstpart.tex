@@ -14,13 +14,13 @@ message without errors?}
 \end{myquote}
 
 Let us see what Shannon meant by ``channel" and ``rate of transmission." 
-We are given a set V of symbols, and a message is just a string of symbols 
-from V. We model the channel as a graph $G = (V,E)$  where $V$ is the set 
+We are given a set $V$ of symbols, and a message is just a string of symbols 
+from $V$. We model the channel as a graph $G = (V,E)$,  where $V$ is the set 
 of symbols, and $E$ the set of edges between unreliable pairs of symbols, 
 that is, symbols which may be confused during transmission. For example, 
 communicating over a phone in everyday language, we connnect the symbols
 $B$ and $P$ by an edge since the receiver may not be able to distinguish 
-them. Let us call $G$ the \textit{confusion graph}.
+them. Let us call $G$ the \textit{confusion graph}.\\
 The 5-cycle $C_5$ will play a prominent role in our discussion. In this example,
 $1$ and $2$ may be confused, but not $1$ and $3$, etc. Ideally we would like 
 to use all $5$ symbols for transmission, but since we want to communicate error-free we can 
@@ -35,7 +35,7 @@ is $log_2 \alpha(G)$, where $\alpha(G)$ is the \textit{independence number} of $
 
 Let us see whether we can increase the information rate by using larger 
 strings in place of single symbols. Suppose we want to transmit strings of 
-length 2. The strings ulu2 and vlv, can only be confused if one of the 
+length 2. The strings $u_1u_2$ and $v_1v_2$ can only be confused if one of the 
 following three cases holds: 
 
 \begin{itemize}[leftmargin=12pt]
@@ -44,7 +44,7 @@ following three cases holds:
   \item $u_1 \neq v_1$ can be confused and $u_2 \neq v_2$ can be confused. 
 \end{itemize}
 
-In graph-theoretic terms this amounts to considering the product $G_1 \times G_2$ 
+In graph-theoretic terms this amounts to considering the \textit{product} $G_1 \times G_2$ 
 of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 \times G_2$ has the vertex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,8 +52,8 @@ of two graphs $G_1 = (V_1, E_1)$  and $G_2 = (V_1, E_1)$. $G_1 \times G_2$ has t
 \setnewpagemargins
 
 set $V_1 \times V_2 = \{(u_1,u_2) :\ u_1 \in V_1,u_2 \in V_2\}$, with $(u_1,u_2) \neq (v_1,v_2)$ 
-connected by an edge if and only if $u_i = v_i$ or $u_iv_i \in E$ for $i = 1,2$. The 
-confusion graph for strings of length $2$ is thus $G^2 - G \times G$, the product of 
+connected by an edge if and only if $u_i = v_i$ or $u_iv_i \in E_i$ for $i = 1,2$. The 
+confusion graph for strings of length $2$ is thus $G^2 = G \times G$, the product of 
 the confusion graph $G$ for single symbols with itself. The information rate 
 of strings of length $2$ \textit{per symbol} is then given by
 
@@ -72,7 +72,7 @@ strings of length $n$ is
 \end{equation*}
 
 What can we say about $\alpha(G^n)$? Here is a first observation. Let $U \subseteq V$ 
-be a largest independent set in $G$, $|U| = \alpha$. The an vertices in $G^n$ of the 
+be a largest independent set in $G$, $|U| = \alpha$. The $\alpha^n$ vertices in $G^n$ of the 
 form $(u_1, \dotsb , u_n)$, $u_i \in U$ for all $i$, clearly form an independent set in $G^n$.
 Hence 
 
@@ -88,8 +88,7 @@ and therefore
 
 meaning that we never decrease the information rate by using longer strings 
 instead of single symbols. This, by the way, is a basic idea of coding theory: 
-By encoding symbols into longer strings we can make error-free communi- 
-cation more efficient.
+By encoding symbols into longer strings we can make error-free communication more efficient.\\
 Disregarding the logarithm we thus arrive at Shannon's fundamental 
 definition: The \textit{zero-error capacity} of a graph $G$ is given by 
 
@@ -105,7 +104,7 @@ and Shannon's problem was to compute $\Theta(G)$, and in particular $\Theta(C_5)
 
 
 Let us look at $C_5$. So far we know $\alpha(C_5) = 2 \leq \Theta(C_5)$. Looking at 
-the $5$-cycle as depicted earlier, or at the product $C_5 x C_5$ as drawn on the 
+the $5$-cycle as depicted earlier, or at the product $C_5 \times C_5$ as drawn on the 
 left, we see that the set $\{(1, 1), (2,3), (3,5), (4,2), (5,4)\}$ is independent 
 in $C_5^2$. Thus we have $\alpha(C_5^2) \geq 5$. Since an independent set can contain 
 only two vertices from any two consecutive rows we see that $\alpha(C_5^2) = 5$.
@@ -122,7 +121,7 @@ two vertices of $C$ are joined by an edge. Thus the vertices form trivial
 \setnewpagemargins
 
 cliques of size $1$, the edges are the cliques of size $2$, the triangles are cliques 
-of size $3$, and so on. Let $C$ be the set of cliques in $G$. Consider an arbitrary 
+of size $3$, and so on. Let $\mathcal{C}$ be the set of cliques in $G$. Consider an arbitrary 
 probability distribution $x = (x_v : v \in V)$ on the set of vertices, that 
 is, $x_v \geq 0$ and $\sum_{v \in V} x_v = 1$. To every distribution $x$ we associate 
 the ``maximal value of a clique"
@@ -168,7 +167,7 @@ holds, since this will imply $\lambda(G^n) = \lambda(G)^n$ and hence
 
 % FIX BIBLIOGRAPHY
 To prove (\ref{one}) we make use of the duality theorem of linear programming 
-(see [I]) and get
+(see \cite{linear}) and get
 
 \begin{equation}
   \lambda(G) = \min_x\max_{C \in \mathcal{C}} \sum_{v\in C} x_v = \max_y\min_{v \in V}\sum_{C \ni v}y_C, \label{two}
@@ -202,7 +201,7 @@ in (\ref{two}). In summary we can state:
   \Theta(G) \leq \lambda(G)^{-1},
 \end{equation*}
 
-for any graph G.
+for any graph G.\\
 Let us apply our findings to the $5$-cycle and, more generally, to the $m$-cycle $C_m$.
 By using the uniform distribution $(\frac{1}{m},\dotsb,\frac{1}{m})$ on the 
 vertices, we obtain $\lambda(C_m) \leq \frac{2}{m} $, since any clique contains at most two 
@@ -234,7 +233,7 @@ problem was provided with an unexpected and elegant solution.\\
 Lov\'asz' main new idea was to represent the vertices $v$ of the graph by 
 real vectors of length $1$ such that any two vectors which belong to nonadjacent 
 vertices in $G$ are orthogonal. Let us call such a set of vectors 
-an orthonormal representation of $G$. Clearly, such a representation always 
+an \textit{orthonormal representation} of $G$. Clearly, such a representation always 
 exists: just take the unit vectors $(1,0,\dotsb,0)^T$, $(0,1,0,\dotsb,0)^T$, \dotsb,
 $(0,0,\dotsb,1)^T$ of dimension $m=|V|$.\\
 
@@ -253,7 +252,7 @@ distance between $0$ and $S$, provides the bound
   \Theta(C_5) \leq \frac{1}{h^2}. \label{four}
 \end{equation}
 
-A simple calculation yields $h^2 = \frac{1}{5}$; see the box on the next page. From   
+A simple calculation yields $h^2 = \frac{1}{\sqrt{5}}$; see the box on the next page. From   
 this $\Theta(C_5) \leq \sqrt{5}$ follows, and therefore $\Theta(C_5) = \sqrt{5}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,7 +264,7 @@ Let us see how Lov\'asz proceeded to prove the inequality (\ref{four}). (His res
 were, in fact, much more general.) Consider the usual inner product 
 
 \begin{equation*}
-  \langle x,y \rangle = x_1y_1 + \dotsb + x_8y_8
+  \langle x,y \rangle = x_1y_1 + \dotsb + x_sy_s
 \end{equation*}
 
 of two vectors $x = (x_1, \dotsb, x_s)$, $y = (y_1, \dotsb, y_s)$ in $\mathbb{R}^s$.
