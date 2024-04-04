@@ -28,6 +28,6 @@ however doing so will not produce any errors.
 - [x] Merge firstpart and secondpart.
 - [x] Add bibliography file and citations.
 - [x] Proofread secondpart.
-- [ ] Proofread firstpart.
+- [x] Proofread firstpart.
 - [ ] Create Report.
 - [ ] Add Compiling Steps for linux and windows.
