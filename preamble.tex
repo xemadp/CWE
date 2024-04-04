@@ -19,8 +19,8 @@
 %                       DEFINING THE THEOREM ENVIRONMENT                           
 %                                                                                  
 \newtheorem*{thm}{Theorem}                                                         
-\surroundwithmdframed[outerlinecolor=white,outerlinewidth=2pt,innerlinewidth=4pt,  
-  bottomline=false,topline=false,rightline=false]{thm}                             
+\surroundwithmdframed[backgroundcolor=gray!15,linecolor=gray!75,linewidth=10pt,    
+  bottomline=false,topline=false,rightline=false]{thm}                           
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,20 +35,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                         DEFINE ENVIRONMENT FOR QUOTES                            
-\newmdenv[                                                                         
-  backgroundcolor=white,                                                           
-  linewidth=0pt,                                                                   
-  innerleftmargin=8pt,                                                             
-  innertopmargin=10pt,                                                             
-  innerrightmargin=0pt,                                                            
-  innerbottommargin=10pt,                                                          
-  leftmargin=-10pt,                                                                
-  skipabove=\topsep,                                                               
-  skipbelow=\topsep,                                                               
-  frametitle={\tikz[overlay,remember picture] \node[anchor=north east,rectangle,   
-  fill=gray!60,inner sep=4pt] at (frame.north east) {};}                           
-]{quotebox}                                                                        
-                                                                                   
+\newmdenv[
+  backgroundcolor=gray!15,
+  linewidth=10pt,
+  linecolor=gray!75,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  innerleftmargin=-20pt,
+  innertopmargin=10pt,
+  innerrightmargin=0pt,
+  innerbottommargin=10pt,
+  leftmargin=-10pt,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{quotebox}
+
 \newenvironment{myquote}                                                           
 {\begin{quotebox}\begin{quote}}                                                    
 {\end{quote}\end{quotebox}}                                                        
