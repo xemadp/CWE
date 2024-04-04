@@ -3,7 +3,7 @@ Rewriting the chapter "Communicating Without Errors" from the book "proofs from 
 
 # Project Overview
 
-%% PLEASE READ "Project Assessment.pdf" %%
+## %% PLEASE READ "Project Assessment.pdf" %%
 
 The project is divided into two parts, "firstpart.tex" and "secondpart.tex", each authored by different team members. The first five pages are covered in "firstpart.tex", while "secondpart.tex" contains subsequent five pages. The consolidated document, "CWE.tex", combines both parts and includes correct bibliography styling (utilizing CWE.bbl).
 
